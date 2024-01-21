@@ -22,6 +22,21 @@
             align-items: center;
             color: #ffffff;
             overflow: hidden; /* Prevents scrolling */
+            position: relative; /* Allows absolute positioning relative to the body */
+        }
+
+        .fade-in-element {
+            opacity: 0;  /* Start elements invisible */
+            transition: opacity 2s ease-in-out; /* Transition for the fade-in effect */
+        }
+
+        .logo-header {
+            max-width: 80%; /* Adjust the size of the logo */
+            margin: 0 auto 2rem; /* Center the logo and add some space below it */
+            position: absolute;
+            top: 10%; /* Position the logo 10% from the top of the viewport */
+            left: 50%; /* Center the logo horizontally */
+            transform: translateX(-50%); /* Center the logo horizontally */
         }
 
         .countdown-container {
@@ -56,6 +71,16 @@
             letter-spacing: 1px; /* Spacing for aesthetics */
         }
 
+        .text-footer {
+            position: absolute;
+            bottom: 5%; /* Position the footer 5% from the bottom of the viewport */
+            width: 100%; /* Full width */
+            text-align: center; /* Center text */
+            font-size: 0.75em; /* Small font size for footer text */
+            line-height: 1.6; /* Spacing between lines */
+            color: #ccc; /* Footer text color */
+        }
+
         /* Pulse animation keyframes */
         @keyframes pulse {
             from {
@@ -78,23 +103,13 @@
                 font-size: 1rem; /* Adjust label size for larger screens */
             }
         }
-		
-		        /* Additional styles for logo fade-in */
-        .logo-header {
-            opacity: 0;  /* Start with the logo invisible */
-            max-width: 80%; /* Adjust the size of the logo */
-            margin: 0 auto 2rem; /* Center the logo and add some space below it */
-            transition: opacity 2s ease-in-out; /* Transition for the fade-in effect */
-            position: absolute;
-            top: 10%; /* Position the logo 10% from the top of the viewport */
-            left: 50%; /* Center the logo horizontally */
-            transform: translateX(-50%); /* Center the logo horizontally */
-        }
     </style>
 </head>
 <body>
     <!-- Header logo that will fade in -->
-<img src="images/logo.webp" id="logo-header" class="logo-header" alt="Logo">
+    <img src="images/logo.webp" id="logo-header" class="fade-in-element logo-header" alt="Logo">
+
+    <!-- Countdown container -->
     <div class="countdown-container" id="countdown">
         <div class="time-block">
             <span id="days" class="number"></span>
@@ -114,6 +129,12 @@
         </div>
     </div>
 
+    <!-- Text footer that will fade in after the logo -->
+    <div id="text-footer" class="fade-in-element text-footer">
+        SXSW is a registered trademark of SXSW, LLC. This website is independently operated by Promise Legal Engage, a series of Promise Legal PLLC.
+        <a href="https://promiselegal.space/terms">Terms of Use</a> | <a href="https://promiselegal.space/privacy">Privacy Policy</a>
+        Additional terms apply. All data gathered via this site or on behalf of SXSW may be shared with SXSW, its agents, affiliates, partners, or other entities in keeping with SXSW's own terms and privacy policies.
+    </div>
     <script>
         // Countdown timer script
         var countDownDate = new Date("2024-03-12T15:00:00Z").getTime();
@@ -136,12 +157,17 @@
                 document.getElementById("countdown").innerHTML = "EVENT STARTED";
             }
         }, 1000);
-		// Script to fade in the logo after 5 seconds
+		// Script to fade in the logo and then the footer
         window.onload = function() {
-            // Set a timeout to add a class that triggers the fade-in after 5 seconds
+            // Fade in the logo after 5 seconds
             setTimeout(function() {
                 document.getElementById('logo-header').style.opacity = '1';
             }, 5000); // 5000 milliseconds = 5 seconds
+
+            // Fade in the footer after the logo
+            setTimeout(function() {
+                document.getElementById('text-footer').style.opacity = '1';
+            }, 7000); // 7000 milliseconds = 7 seconds
         };
     </script>
 </body>
