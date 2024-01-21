@@ -82,8 +82,8 @@
     </div>
 
     <script>
-        // Countdown timer script remains the same
-        var countDownDate = new Date("2024-03-12T10:00:00").getTime();
+        // Countdown timer script
+        var countDownDate = new Date("2024-03-12T15:00:00Z").getTime();
 
         var x = setInterval(function() {
             var now = new Date().getTime();
@@ -100,7 +100,7 @@
 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "EVENT STARTED";
+                document.getElementById("countdown").innerHTML = "WE HAVE IGNITION";
             }
         }, 1000);
     </script>
