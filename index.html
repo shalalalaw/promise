@@ -7,7 +7,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-        /* Added Roboto font for a modern look */
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #282c34;
@@ -25,7 +24,6 @@
             overflow: hidden; /* Prevents scrolling */
         }
 
-        /* Styling the countdown container with a subtle gradient and shadow */
         .countdown-container {
             background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
             border-radius: 15px; /* Rounded corners */
@@ -33,15 +31,29 @@
             padding: 2rem 4rem; /* Padding around the text */
             backdrop-filter: blur(5px); /* Blur effect for see-through */
             border: 1px solid rgba(255, 255, 255, 0.3); /* Border for a bit of depth */
+            display: flex; /* Aligns the child divs in a row */
         }
 
-        /* Adjusting the font sizes and adding animations */
-        .countdown-container span {
-            font-size: 5vw; /* Responsive font size */
+        .time-block {
+            margin: 0 20px; /* Space between the time blocks */
+            display: flex; /* Aligns the number and label in a column */
+            flex-direction: column;
+            align-items: center; /* Center align the items */
+        }
+
+        .number {
+            font-size: 5vw; /* Responsive font size for the number */
             font-weight: 500; /* Font weight for better readability */
-            display: inline-block;
-            min-width: 100px; /* Ensures even spacing */
+            line-height: 1; /* Adjust line height for spacing */
             animation: pulse 1s infinite alternate; /* Pulse animation */
+        }
+
+        .label {
+            font-weight: 300;
+            margin-top: 0.5rem; /* Space between number and label */
+            font-size: 0.5em; /* Smaller label size */
+            text-transform: uppercase; /* Uppercase for labels */
+            letter-spacing: 1px; /* Spacing for aesthetics */
         }
 
         /* Pulse animation keyframes */
@@ -58,32 +70,39 @@
 
         /* Larger fixed font size for larger screens */
         @media (min-width: 768px) {
-            .countdown-container span {
-                font-size: 2rem;
+            .number {
+                font-size: 2rem; /* Larger fixed font size for larger screens */
             }
-        }
 
-        /* Label styling for a cleaner look */
-        .label {
-            font-weight: 300;
-            margin-left: 0.5rem; /* Space between number and label */
-            font-size: 0.5em; /* Smaller label size */
-            text-transform: uppercase; /* Uppercase for labels */
-            letter-spacing: 1px; /* Spacing for aesthetics */
+            .label {
+                font-size: 1rem; /* Adjust label size for larger screens */
+            }
         }
     </style>
 </head>
 <body>
     <div class="countdown-container" id="countdown">
-        <span id="days"></span><span class="label">Days</span>
-        <span id="hours"></span><span class="label">Hours</span>
-        <span id="minutes"></span><span class="label">Minutes</span>
-        <span id="seconds"></span><span class="label">Seconds</span>
+        <div class="time-block">
+            <span id="days" class="number"></span>
+            <span class="label">Days</span>
+        </div>
+        <div class="time-block">
+            <span id="hours" class="number"></span>
+            <span class="label">Hours</span>
+        </div>
+        <div class="time-block">
+            <span id="minutes" class="number"></span>
+            <span class="label">Minutes</span>
+        </div>
+        <div class="time-block">
+            <span id="seconds" class="number"></span>
+            <span class="label">Seconds</span>
+        </div>
     </div>
 
     <script>
         // Countdown timer script
-        var countDownDate = new Date("2024-03-12T15:00:00Z").getTime();
+        var countDownDate = new Date("2024-01-20T10:00:00").getTime();
 
         var x = setInterval(function() {
             var now = new Date().getTime();
@@ -100,7 +119,7 @@
 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "WE HAVE IGNITION";
+                document.getElementById("countdown").innerHTML = "EVENT STARTED";
             }
         }, 1000);
     </script>
