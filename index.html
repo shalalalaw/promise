@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/favicon.png" />
+	<link rel="icon" href="images/favicon.png" sizes="32x32" />
+	<link rel="icon" href="images/favicon.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="images/favicon.png" />
 	<meta name="robots" content="noindex, nofollow">
-    <title>Countdown Timer</title>
+    <title>SXSW CLE</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
@@ -104,11 +108,82 @@
                 font-size: 1rem; /* Adjust label size for larger screens */
             }
         }
+		.interactive-words {
+    position: absolute;
+	font-size: 3em;
+    top: 25%;
+    left: 45%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10%;
+}
+
+.hover-word {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.hover-word:hover {
+    opacity: 1;
+}
+.hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .interactive-words {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .interactive-words.active {
+        transform: translateY(0);
+    }
+}
+.fade-in-out {
+    animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
     </style>
 </head>
 <body>
     <!-- Header logo that will fade in -->
     <img src="images/logo.webp" id="logo-header" class="fade-in-element logo-header" alt="Logo">
+	<div class="interactive-words">
+    <span id="sponsor" class="hover-word">SPONSOR</span>
+    <span id="speak" class="hover-word">SPEAK</span>
+    <span id="attend" class="hover-word">ATTEND</span>
+    <span id="learn" class="hover-word">LEARN</span>
+</div>
+<div class="hamburger-menu" onclick="toggleHamburgerMenu()">
+    ☰
+</div>
+
+
 
     <!-- Countdown container -->
     <div class="countdown-container" id="countdown">
@@ -160,17 +235,37 @@
             }
         }, 1000);
 		// Script to fade in the logo and then the footer
-        window.onload = function() {
-            // Fade in the logo after 5 seconds
-            setTimeout(function() {
-                document.getElementById('logo-header').style.opacity = '1';
-            }, 5000); // 5000 milliseconds = 5 seconds
+window.onload = function() {
+sequentialFadeIn(); // Call this function right after the logo fades in
+    // Fade in the logo after 5 seconds
+    setTimeout(function() {
+        document.getElementById('logo-header').style.opacity = '1';
+    }, 5000); // 5000 milliseconds = 5 seconds
 
-            // Fade in the footer after the logo
-            setTimeout(function() {
-                document.getElementById('text-footer').style.opacity = '1';
-            }, 7000); // 7000 milliseconds = 7 seconds
-        };
+    // Fade in the footer after 7 seconds
+    setTimeout(function() {
+        document.getElementById('text-footer').style.opacity = '1';
+    }, 7000); // 7000 milliseconds = 7 seconds
+};
+
+		function sequentialFadeIn() {
+    const words = document.querySelectorAll('.hover-word');
+    let delay = 2000;
+
+    words.forEach((word, index) => {
+        setTimeout(() => {
+            word.classList.add('fade-in-out');
+            setTimeout(() => {
+                word.classList.remove('fade-in-out');
+            }, 1000); // Duration of fade in and out for each word
+        }, delay);
+        delay += 500; // Delay for the next word
+    });
+}
+		function toggleHamburgerMenu() {
+    var words = document.querySelector('.interactive-words');
+    words.classList.toggle('active');
+}
     </script>
 </body>
 </html>
