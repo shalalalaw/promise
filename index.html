@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #282c34;
-            color: white;
-            text-align: center;
-            padding-top: 20%;
-            font-size: 20px;
-        }
-        .countdown-container {
-            font-size: 3em;
-            font-weight: bold;
-        }
-    </style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+        padding-top: 20%;
+        font-size: 20px;
+
+        /* Background image settings */
+        background-image: url('images/background.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* This keeps the background image fixed during scrolling */
+    }
+    .countdown-container {
+        font-size: 3em;
+        font-weight: bold;
+    }
+</style>
 </head>
 <body>
     <div class="countdown-container" id="countdown">
