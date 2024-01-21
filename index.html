@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        color: white;
-        text-align: center;
-        padding-top: 20%;
-        font-size: 20px;
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-        /* Background image settings */
+    body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #282c34;
         background-image: url('images/background.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed; /* This keeps the background image fixed during scrolling */
+        background-attachment: fixed;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
     }
+
     .countdown-container {
-        font-size: 3em;
-        font-weight: bold;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        font-weight: 700;
+        letter-spacing: 3px;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .countdown-container span {
+        font-size: 5vw; /* responsive font size */
+        display: inline-block;
+        min-width: 100px; /* ensures even spacing */
+    }
+
+    @media (min-width: 768px) {
+        .countdown-container span {
+            font-size: 2rem; /* fixed font size for larger screens */
+        }
     }
 </style>
 </head>
