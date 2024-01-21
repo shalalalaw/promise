@@ -1,89 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-    body {
-        font-family: 'Open Sans', sans-serif;
-        background-color: #282c34;
-        background-image: url('images/background.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-    }
-
-    .countdown-container {
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        font-weight: 700;
-        letter-spacing: 3px;
-        background: rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .countdown-container span {
-        font-size: 5vw; /* responsive font size */
-        display: inline-block;
-        min-width: 100px; /* ensures even spacing */
-    }
-
-    @media (min-width: 768px) {
-        .countdown-container span {
-            font-size: 2rem; /* fixed font size for larger screens */
+        /* Added Roboto font for a modern look */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #282c34;
+            background-image: url('images/background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            overflow: hidden; /* Prevents scrolling */
         }
-    }
-</style>
+
+        /* Styling the countdown container with a subtle gradient and shadow */
+        .countdown-container {
+            background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            padding: 2rem 4rem; /* Padding around the text */
+            backdrop-filter: blur(5px); /* Blur effect for see-through */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Border for a bit of depth */
+        }
+
+        /* Adjusting the font sizes and adding animations */
+        .countdown-container span {
+            font-size: 5vw; /* Responsive font size */
+            font-weight: 500; /* Font weight for better readability */
+            display: inline-block;
+            min-width: 100px; /* Ensures even spacing */
+            animation: pulse 1s infinite alternate; /* Pulse animation */
+        }
+
+        /* Pulse animation keyframes */
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+                opacity: 0.75;
+            }
+            to {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        /* Larger fixed font size for larger screens */
+        @media (min-width: 768px) {
+            .countdown-container span {
+                font-size: 2rem;
+            }
+        }
+
+        /* Label styling for a cleaner look */
+        .label {
+            font-weight: 300;
+            margin-left: 0.5rem; /* Space between number and label */
+            font-size: 0.5em; /* Smaller label size */
+            text-transform: uppercase; /* Uppercase for labels */
+            letter-spacing: 1px; /* Spacing for aesthetics */
+        }
+    </style>
 </head>
 <body>
     <div class="countdown-container" id="countdown">
-        <span id="days"></span> Days : 
-        <span id="hours"></span> Hours : 
-        <span id="minutes"></span> Minutes : 
-        <span id="seconds"></span> Seconds
+        <span id="days"></span><span class="label">Days</span>
+        <span id="hours"></span><span class="label">Hours</span>
+        <span id="minutes"></span><span class="label">Minutes</span>
+        <span id="seconds"></span><span class="label">Seconds</span>
     </div>
 
     <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("2024-03-12T15:00:00Z").getTime();
+        // Countdown timer script remains the same
+        var countDownDate = new Date("2024-01-20T10:00:00").getTime();
 
-        // Update the count down every 1 second
         var x = setInterval(function() {
-
-            // Get today's date and time
             var now = new Date().getTime();
-            
-            // Find the distance between now and the count down date
             var distance = countDownDate - now;
-            
-            // Time calculations for days, hours, minutes and seconds
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Output the result in the elements with id="..."
+
             document.getElementById("days").innerHTML = days;
             document.getElementById("hours").innerHTML = hours;
             document.getElementById("minutes").innerHTML = minutes;
             document.getElementById("seconds").innerHTML = seconds;
-            
-            // If the count down is over, write some text 
+
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "WE HAVE IGNITION";
+                document.getElementById("countdown").innerHTML = "EVENT STARTED";
             }
         }, 1000);
     </script>
