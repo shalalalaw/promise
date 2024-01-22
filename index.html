@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="images/favicon.png" />
-	<link rel="icon" href="images/favicon.png" sizes="32x32" />
-	<link rel="icon" href="images/favicon.png" sizes="192x192" />
-	<link rel="apple-touch-icon" href="images/favicon.png" />
-	<meta name="robots" content="noindex, nofollow">
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="icon" href="images/favicon.png" sizes="32x32" />
+    <link rel="icon" href="images/favicon.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="images/favicon.png" />
+    <meta name="robots" content="noindex, nofollow">
     <title>SXSW CLE</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
@@ -111,7 +111,7 @@
 		.interactive-words {
     position: absolute;
 	font-size: 3em;
-    top: 25%;
+    top: 30%;
     left: 45%;
     transform: translateX(-50%);
     display: flex;
@@ -127,38 +127,51 @@
 .hover-word:hover {
     opacity: 1;
 }
-.hamburger-menu {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+       .hamburger-menu {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            .interactive-words {
+                display: none;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transform: translateY(100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 500; /* Ensure visibility */
+            }
+
+            .interactive-words.active {
+                display: flex; /* Added to ensure display */
+                transform: translateY(0);
+            }
+			.interactive-words .hover-word {
+    opacity: 1; /* Make all words visible */
+    transition: opacity 0.5s ease-in-out;
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
-    }
-
-    .interactive-words {
-        display: none;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        transform: translateY(100%);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .interactive-words.active {
-        transform: translateY(0);
-    }
+.hamburger-menu.active {
+    transform: rotate(90deg); /* Rotate the hamburger menu */
+    transition: transform 0.3s ease-in-out;
 }
+        }
 .fade-in-out {
     animation: fadeInOut 1s ease-in-out;
 }
@@ -179,9 +192,9 @@
     <span id="attend" class="hover-word">ATTEND</span>
     <span id="learn" class="hover-word">LEARN</span>
 </div>
-<div class="hamburger-menu" onclick="toggleHamburgerMenu()">
-    ☰
-</div>
+    <div class="hamburger-menu" id="hamburger-menu">
+        ☰
+    </div>
 
 
 
@@ -262,10 +275,13 @@ sequentialFadeIn(); // Call this function right after the logo fades in
         delay += 500; // Delay for the next word
     });
 }
-		function toggleHamburgerMenu() {
+document.getElementById('hamburger-menu').addEventListener('click', function() {
     var words = document.querySelector('.interactive-words');
+    var hamburger = document.getElementById('hamburger-menu');
     words.classList.toggle('active');
-}
+    hamburger.classList.toggle('active'); // Toggle the class for rotation
+});
+
     </script>
 </body>
 </html>
