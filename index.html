@@ -1,258 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/favicon.png" />
-    <link rel="icon" href="images/favicon.png" sizes="32x32" />
-    <link rel="icon" href="images/favicon.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="images/favicon.png" />
-    <meta name="robots" content="noindex, nofollow">
-    <title>Promise Legal</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promise Legal</title>
+<style>
+  body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #282c34;
-            background-image: url('images/background.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-            overflow: hidden; /* Prevents scrolling */
-            position: relative; /* Allows absolute positioning relative to the body */
-        }
+  body {
+    font-family: 'Arial', sans-serif;
+  }
 
-        .fade-in-element {
-            opacity: 0;  /* Start elements invisible */
-            transition: opacity 2s ease-in-out; /* Transition for the fade-in effect */
-        }
+  .navbar {
+    background: #000;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
 
-        .logo-header {
-            max-width: 80%; /* Adjust the size of the logo */
-            margin: 0 auto 2rem; /* Center the logo and add some space below it */
-            position: absolute;
-            top: 10%; /* Position the logo 10% from the top of the viewport */
-            left: 50%; /* Center the logo horizontally */
-            transform: translateX(-50%); /* Center the logo horizontally */
-        }
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
 
-        .countdown-container {
-            background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
-            border-radius: 15px; /* Rounded corners */
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); /* Soft shadow */
-            padding: 2rem 4rem; /* Padding around the text */
-            backdrop-filter: blur(5px); /* Blur effect for see-through */
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Border for a bit of depth */
-            display: flex; /* Aligns the child divs in a row */
-        }
+  .navbar li {
+    float: left;
+  }
 
-        .time-block {
-            margin: 0 20px; /* Space between the time blocks */
-            display: flex; /* Aligns the number and label in a column */
-            flex-direction: column;
-            align-items: center; /* Center align the items */
-        }
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
 
-        .number {
-            font-size: 5vw; /* Responsive font size for the number */
-            font-weight: 500; /* Font weight for better readability */
-            line-height: 1; /* Adjust line height for spacing */
-            animation: pulse 1s infinite alternate; /* Pulse animation */
-        }
+  .navbar li a:hover {
+    background-color: #111;
+  }
 
-        .label {
-            font-weight: 300;
-            margin-top: 0.5rem; /* Space between number and label */
-            font-size: 0.5em; /* Smaller label size */
-            text-transform: uppercase; /* Uppercase for labels */
-            letter-spacing: 1px; /* Spacing for aesthetics */
-        }
+  .section {
+    padding: 50px;
+    text-align: center;
+  }
 
-        .text-footer {
-            position: absolute;
-            bottom: 2%; /* Position the footer 5% from the bottom of the viewport */
-            width: 100%; /* Full width */
-            text-align: center; /* Center text */
-            font-size: 0.75em; /* Small font size for footer text */
-            line-height: 1.6; /* Spacing between lines */
-            color: #ccc; /* Footer text color */
-        }
+  .background-img1, .background-img2 {
+    width: 100%;
+    height: auto;
+  }
 
-        /* Pulse animation keyframes */
-        @keyframes pulse {
-            from {
-                transform: scale(1);
-                opacity: 0.75;
-            }
-            to {
-                transform: scale(1.05);
-                opacity: 1;
-            }
-        }
-
-        /* Larger fixed font size for larger screens */
-        @media (min-width: 768px) {
-            .number {
-                font-size: 2rem; /* Larger fixed font size for larger screens */
-            }
-
-            .label {
-                font-size: 1rem; /* Adjust label size for larger screens */
-            }
-        }
-		.interactive-words {
-    position: absolute;
-	font-size: 3em;
-    top: 30%;
-    left: 45%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10%;
-}
-
-.hover-word {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    cursor: pointer;
-}
-
-.hover-word:hover {
-    opacity: 1;
-}
-       .hamburger-menu {
-            display: none;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 1000; /* Ensure it's above other elements */
-        }
-
-        @media screen and (max-width: 768px) {
-            .hamburger-menu {
-                display: block;
-            }
-
-            .interactive-words {
-                display: none;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                transform: translateY(100%);
-                transition: transform 0.3s ease-in-out;
-                z-index: 500; /* Ensure visibility */
-            }
-
-            .interactive-words.active {
-                display: flex; /* Added to ensure display */
-                transform: translateY(0);
-            }
-			.interactive-words .hover-word {
-    opacity: 1; /* Make all words visible */
-    transition: opacity 0.5s ease-in-out;
-    cursor: pointer;
-}
-
-.hamburger-menu.active {
-    transform: rotate(90deg); /* Rotate the hamburger menu */
-    transition: transform 0.3s ease-in-out;
-}
-        }
-.fade-in-out {
-    animation: fadeInOut 1s ease-in-out;
-}
-
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-}
-
-    </style>
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
 </head>
 <body>
-    <!-- Header logo that will fade in -->
-    <img src="images/logo.webp" id="logo-header" class="fade-in-element logo-header" alt="Logo">
-	<div class="interactive-words">
+
+<header class="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#practice-areas">Practice Areas</a></li>
+    <li><a href="#why-us">Why Promise Legal</a></li>
+    <li><a href="#the-team">The Legal Team</a></li>
+    <li><a href="#promos">Promos and Offers</a></li>
+    <li><a href="#press">Press</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
+
+<div id="home" class="section">
+  <img class="background-img1" src="path_to_your_image/Home.png" alt="Promise Legal Banner">
 </div>
-    <div class="hamburger-menu" id="hamburger-menu">
-        ☰
-    </div>
 
-    <!-- Text footer that will fade in after the logo -->
-    <div id="text-footer" class="fade-in-element text-footer">
-        <a href="https://promiselegal.space/terms">Terms of Use</a> | <a href="https://promiselegal.space/privacy">Privacy Policy</a>
-    </div>
-    <script>
-        // Countdown timer script
-        var countDownDate = new Date("2024-03-12T15:00:00Z").getTime();
+<div id="vision" class="section">
+  <h1>Our Vision</h1>
+  <p>Return True</p>
+  <p>Creative, passionate lawyering for creative, passionate people.</p>
+  <p>At Promise Legal, programming is in our blood.</p>
+  <p>We work with our clients on a variety of business and technology legal matters, using future-focused tech and billing practices.</p>
+</div>
 
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+<div id="practice-areas" class="section">
+  <h2>Practice Areas</h2>
+  <!-- Add practice areas here -->
+</div>
 
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
+<div id="why-us" class="section">
+  <h2>Why Us?</h2>
+  <p>Traditional Solutions. New Packages.</p>
+  <!-- Add more content here -->
+</div>
 
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "EVENT STARTED";
-            }
-        }, 1000);
-		// Script to fade in the logo and then the footer
-window.onload = function() {
-sequentialFadeIn(); // Call this function right after the logo fades in
-    // Fade in the logo after 5 seconds
-    setTimeout(function() {
-        document.getElementById('logo-header').style.opacity = '1';
-    }, 5000); // 5000 milliseconds = 5 seconds
+<div id="the-team" class="section">
+  <h2>The Legal Team</h2>
+  <!-- Add team members here -->
+</div>
 
-    // Fade in the footer after 7 seconds
-    setTimeout(function() {
-        document.getElementById('text-footer').style.opacity = '1';
-    }, 7000); // 7000 milliseconds = 7 seconds
-};
+<div id="promos" class="section">
+  <h2>Promos and Offers</h2>
+  <!-- Add promos here -->
+</div>
 
-		function sequentialFadeIn() {
-    const words = document.querySelectorAll('.hover-word');
-    let delay = 2000;
+<div id="press" class="section">
+  <h2>In The Press</h2>
+  <!-- Add press articles or testimonials here -->
+</div>
 
-    words.forEach((word, index) => {
-        setTimeout(() => {
-            word.classList.add('fade-in-out');
-            setTimeout(() => {
-                word.classList.remove('fade-in-out');
-            }, 1000); // Duration of fade in and out for each word
-        }, delay);
-        delay += 500; // Delay for the next word
-    });
-}
-document.getElementById('hamburger-menu').addEventListener('click', function() {
-    var words = document.querySelector('.interactive-words');
-    var hamburger = document.getElementById('hamburger-menu');
-    words.classList.toggle('active');
-    hamburger.classList.toggle('active'); // Toggle the class for rotation
-});
+<footer id="contact">
+  <p>Contact us at: email@example.com</p>
+  <p>Follow us on social media</p>
+</footer>
 
-    </script>
+<script>
+  // Add JavaScript code here if needed
+</script>
 </body>
 </html>
