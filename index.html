@@ -105,6 +105,55 @@
   z-index: 2;
 }
 
+.home-section h1 {
+    font-family: 'Bebas Neue', cursive;
+    /* Responsive font size using viewport width */
+    font-size: 8vw; /* Adjust the vw unit as needed to start with */
+    color: #e46990;
+    -webkit-text-stroke: 2px #720024;
+    text-stroke: 2px #720024;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    white-space: nowrap; /* Prevents the text from wrapping */
+  }
+
+  .home-section p {
+    font-family: 'Bebas Neue', cursive;
+    /* Responsive font size using viewport width */
+    font-size: 3.2vw; /* Adjust the vw unit as needed to start with */
+    color: #e46990;
+    -webkit-text-stroke: 2px #720024;
+    text-stroke: 2px #720024;
+    position: absolute;
+    top: calc(50% + 5vw); /* Adjust the percentage as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    white-space: nowrap; /* Prevents the text from wrapping */
+  }
+
+  /* Set maximum and minimum font sizes to prevent the text from becoming too large or too small */
+  @media (min-width: 768px) {
+    .home-section h1 {
+      font-size: 106px; /* Maximum font size for larger screens */
+    }
+    .home-section p {
+      font-size: 42px; /* Maximum font size for larger screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .home-section h1 {
+      font-size: 56px; /* Minimum font size for smaller screens */
+    }
+    .home-section p {
+      font-size: 22px; /* Minimum font size for smaller screens */
+    }
+  }
+
 
 </style>
 </head>
