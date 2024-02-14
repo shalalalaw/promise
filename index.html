@@ -67,12 +67,45 @@
     bottom: 0;
     width: 100%;
   }
-  
-  .promise-legal-come-alive {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 48px; /* Adjust the size as needed */
-    /* Other styling for the section */
+  .home-section {
+    position: relative;
+    text-align: center;
+    color: white;
   }
+
+  .home-section img {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensure it's a block element to fill width */
+  }
+
+  .promise-legal-header {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 106px; /* Size for 'Promise Legal' */
+  color: #e46990; /* Text color */
+  -webkit-text-stroke: 2px #720024; /* Outline thickness and color for better visibility */
+  text-stroke: 2px #720024; /* Standard syntax, might not be supported in all browsers */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.promise-legal-subheader {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 42px; /* Size for 'Come Alive' */
+  color: #e46990; /* Text color */
+  -webkit-text-stroke: 2px #720024; /* Outline thickness and color for better visibility */
+  text-stroke: 2px #720024; /* Standard syntax, might not be supported in all browsers */
+  position: absolute;
+  top: calc(50% + 60px); /* Positioning below the 'Promise Legal' text */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+
 </style>
 </head>
 <body>
@@ -90,11 +123,12 @@
   </ul>
 </header>
 
-<div id="home" class="section">
-  <h1 class="promise-legal-come-alive">Promise Legal</h1>
-  <p class="promise-legal-come-alive">Come Alive</p>
-  <img class="background-img1" src="blog-image.png" alt="Promise Legal Banner">
+<div id="home" class="home-section">
+  <h1 class="promise-legal-header">Promise Legal</h1>
+  <p class="promise-legal-subheader">Come Alive</p>
+  <img src="images/blog-image.png" alt="Promise Legal Banner">
 </div>
+
 
 <div id="vision" class="section">
   <h1>Our Vision</h1>
