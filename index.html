@@ -9,22 +9,17 @@
   body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
+	line-height: 1.49999063em;
   }
+  
+  p {
+  margin-bottom: 1em; /* Adjust the value as needed */
+}
+
 
   body {
     font-family: 'Arial', sans-serif;
   }
-
-  .navbar {
-  background: #fff;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: flex-end; /* This will align the nav items to the right */
-}
 
 .navMenuLinkContent {
   display: inline-block;
@@ -38,33 +33,44 @@
   text-overflow: ellipsis;
 }
 
-/* If you have a <ul> or <ol> for the nav links, reset its default padding/margin */
-.navbar ul, .navbar ol {
+.navbar {
+  background: #fff;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end; /* Aligns the nav items to the right */
+}
+
+.navbar ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex; /* Ensures the list items are in a row */
 }
 
-  .navbar li {
+.navbar li {
   display: inline-block;
-    margin-left: auto;
-  }
+}
 
-  .navbar li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-	color: #55595B;
-  }
-  
-  .navbar li a:hover {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-	color: #0d1216;
-  }
+/* Apply 'margin-left: auto;' to the first 'li' element to push everything to the right */
+.navbar li:first-child {
+  margin-left: auto;
+}
+
+.navbar a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #55595B;
+}
+
+.navbar a:hover {
+  color: #0d1216;
+}
 
   .section {
     padding: 50px;
