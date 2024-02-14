@@ -16,21 +16,35 @@
   }
 
   .navbar {
-    background: #000;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
+  background: #fff;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end; /* This will align the nav items to the right */
+}
 
-  .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
+.navMenuLinkContent {
+  display: inline-block;
+  text-decoration-line: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 10px 16px;
+  color: hsla(210, 26%, 7%, 0.7);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* If you have a <ul> or <ol> for the nav links, reset its default padding/margin */
+.navbar ul, .navbar ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
   .navbar li {
     float: left;
@@ -38,14 +52,9 @@
 
   .navbar li a {
     display: block;
-    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
-
-  .navbar li a:hover {
-    background-color: #111;
   }
 
   .section {
@@ -201,7 +210,7 @@
 </head>
 <body>
 
-<header class="navbar">
+<header class="navbar navMenuLinkContent">
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#vision">Vision</a></li>
