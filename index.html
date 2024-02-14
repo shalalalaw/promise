@@ -10,13 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
 <style>
-  body, h1, h2, h3, p {
+body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
-	line-height: 1.49999063em;
+	line-height: 1em;
   }
   
-  p {
+p {
   margin-bottom: 1em; /* Adjust the value as needed */
   font-family: "Didact Gothic", sans-serif;
   font-weight: 400;
@@ -71,13 +71,7 @@
   color: #0d1216;
 }
 
-
-  .section {
-    padding: 50px;
-    text-align: center;
-  }
-
-  .background-img1, .background-img2 {
+.background-img1, .background-img2 {
     width: 100%;
     height: auto;
   }
@@ -91,19 +85,20 @@
     bottom: 0;
     width: 100%;
   }
-  .home-section {
+  
+.home-section {
     position: relative;
     text-align: center;
     color: white;
   }
 
-  .home-section img {
+.home-section img {
     width: 100%;
     height: auto;
     display: block; /* Ensure it's a block element to fill width */
   }
 
-  .promise-legal-header {
+.promise-legal-header {
   font-family: 'Bebas Neue', cursive;
   font-size: 106px; /* Size for 'Promise Legal' */
   color: #e46990; /* Text color */
@@ -136,10 +131,11 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 /* Styles for side-by-side elements within a section on desktop */
-.section > div {
+.vision-section > div {
   flex: 1;
   min-width: 50%;
   max-width: 50%;
@@ -157,6 +153,7 @@
 .section h2 {
   font-family: "Cute Font", serif;
   font-size: 4em; /* Adjust the size as needed */
+  width: 100%;
 }
 
 .home-section h1 {
@@ -219,12 +216,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px;
+  padding: 30px;
   background: #f1f1f0; /* Updated background color */
 }
 
+.practice-section {
+  background-color: #e46990; /* The pink background color */
+  padding: 20px 0; /* Top and bottom padding */
+  text-align: center; /* Center text within the header */
+}
 
-  /* Smaller Screens
+.practice-area {
+  border: 2px solid #000; /* Black border around each box */
+  padding: 20px; /* Padding inside each box */
+  margin: 10px; /* Margin between the boxes */
+  background-color: #fff; /* White background for the content area */
+  flex: 0 1 calc(33.333% - 20px); /* Flex grow, shrink, basis */
+  box-sizing: border-box; /* Include padding and border in the width */
+  height: 65vh; /* Fixed height for all boxes */
+  min-width: 30vw;
+}
+
+.practice-areas-container {
+  display: flex;
+  justify-content: space-around; /* Distribute boxes evenly */
+  flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
+  max-width: 1200px; /* Maximum width of the content area */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Header style within the practice section */
+.practice-section > h2 {
+  color: #fff;
+}
+
+/* Responsive design for mobile, stacking the boxes */
+@media (max-width: 767px) {
+  .practice-area {
+    flex-basis: 100%; /* Each box takes full width on small screens */
+    margin: 10px 0; /* Top and bottom margin for stacked boxes */
+  }
+}
+
+/* Smaller Screens
   Set maximum and minimum font sizes to prevent the text from becoming too large or too small */
   @media (min-width: 768px) {
     .home-section h1 {
@@ -282,10 +316,21 @@
   </div>
 </div>
 
-
-<div id="practice-areas" class="section">
-  <h2>Practice Areas</h2>
-  <!-- Add practice areas here -->
+<div class="section practice-section"><h2>Practice Areas</h2>
+  <div class="practice-areas-container">
+    <div class="practice-area">
+      <h3>Tech and Security</h3>
+      <p>Description here</p>
+    </div>
+    <div class="practice-area">
+      <h3>Business</h3>
+      <p>Description here</p>
+    </div>
+    <div class="practice-area">
+      <h3>Media and Entertainment</h3>
+      <p>Description here</p>
+    </div>
+  </div>
 </div>
 
 <div id="why-us" class="section">
