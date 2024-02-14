@@ -134,8 +134,50 @@
     z-index: 2;
     white-space: nowrap; /* Prevents the text from wrapping */
   }
+  
+  .vision-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background: #f1f1f0; /* Adjust the background color as needed */
+}
 
-  /* Set maximum and minimum font sizes to prevent the text from becoming too large or too small */
+.vision-text {
+  max-width: 50%;
+}
+
+.vision-text h1 {
+  color: #000; /* Or any color you prefer */
+  font-size: 2.5em; /* Adjust the size as needed */
+}
+
+.vision-text .vision-tagline {
+  color: #555; /* Or any color you prefer */
+  font-size: 1.5em; /* Adjust the size as needed */
+}
+
+.vision-text p {
+  color: #333; /* Or any color you prefer */
+  font-size: 1em; /* Adjust the size as needed */
+  line-height: 1.6;
+}
+
+.vision-image {
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vision-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+  /* Smaller Screens
+  Set maximum and minimum font sizes to prevent the text from becoming too large or too small */
   @media (min-width: 768px) {
     .home-section h1 {
       font-size: 106px; /* Maximum font size for larger screens */
@@ -179,13 +221,19 @@
 </div>
 
 
-<div id="vision" class="section">
-  <h1>Our Vision</h1>
-  <p>Return True</p>
-  <p>Creative, passionate lawyering for creative, passionate people.</p>
-  <p>At Promise Legal, programming is in our blood.</p>
-  <p>We work with our clients on a variety of business and technology legal matters, using future-focused tech and billing practices.</p>
+<div id="vision" class="vision-section">
+  <div class="vision-text">
+    <h1>Our Vision</h1>
+    <p class="vision-tagline">Return True</p>
+    <p>Creative, passionate lawyering for creative, passionate people.</p>
+    <p>At Promise Legal, programming is in our blood.</p>
+    <p>We work with our clients on a variety of business and technology legal matters, using future-focused tech and billing practices.</p>
+  </div>
+  <div class="vision-image">
+    <img src="images/vision-image.png" alt="Unicorn Image">
+  </div>
 </div>
+
 
 <div id="practice-areas" class="section">
   <h2>Practice Areas</h2>
