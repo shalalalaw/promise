@@ -126,29 +126,31 @@
   z-index: 2;
 }
 
+/* Styles for each section */
 .section {
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
+  align-items: center;
+  justify-content: center;
 }
 
-/* Styles for side-by-side elements within a section */
+/* Styles for side-by-side elements within a section on desktop */
 .section > div {
-  flex: 1; /* Flex grow, allows for the div to take up equal space */
-  min-width: 50%; /* Half the width, for side-by-side */
-  max-width: 50%; /* Ensures it does not grow beyond 50% */
+  flex: 1;
+  min-width: 50%;
+  max-width: 50%;
 }
 
-/* Style for mobile devices */
+/* Styles for stacked elements within a section on mobile */
 @media (max-width: 767px) {
   .section > div {
-    min-width: 100%; /* Full width, for stacked */
-    max-width: 100%; /* Ensures it does not shrink below 100% */
-    min-height: 100vh; /* Each element takes at least the height of the viewport */
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
   }
 }
+
 
 .home-section h1 {
     font-family: 'Bebas Neue', cursive;
