@@ -98,7 +98,7 @@ p {
     display: block; /* Ensure it's a block element to fill width */
   }
 
-.promise-legal-header {
+#promise-legal-header {
   font-family: 'Bebas Neue', cursive;
   font-size: 106px; /* Size for 'Promise Legal' */
   color: #e46990; /* Text color */
@@ -111,9 +111,9 @@ p {
   z-index: 2;
 }
 
-.promise-legal-subheader {
+#promise-legal-subheader {
   font-family: 'Bebas Neue', cursive;
-  font-size: 42px; /* Size for 'Come Alive' */
+  font-size: 60px; /* Size for 'Come Alive' */
   color: #e46990; /* Text color */
   -webkit-text-stroke: 2px #720024; /* Outline thickness and color for better visibility */
   text-stroke: 2px #720024; /* Standard syntax, might not be supported in all browsers */
@@ -125,14 +125,14 @@ p {
 }
 
 /* Styles for each section */
-.section {
+section {
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 5% 0%;
+  padding: 0% 0%;
 }
 
 /* Styles for side-by-side elements within a section on desktop */
@@ -144,17 +144,17 @@ p {
 
 /* Styles for stacked elements within a section on mobile */
 @media (max-width: 767px) {
-  .section {
-  padding: 10% 0%;
+  section {
+  padding: 0% 0%;
   }
-  .section > div {
+  section > div {
     min-width: 100%;
     max-width: 100%;
     min-height: 100vh;
   }
 }
 
-.section h2 {
+section h2 {
   font-family: "Cute Font", serif;
   font-size: 5em; /* Adjust the size as needed */
   width: 100%;
@@ -444,14 +444,14 @@ p {
   </ul>
 </header>
 
-<div id="home" class="home-section">
-  <h1 class="promise-legal-header">Promise Legal</h1>
-  <p class="promise-legal-subheader">Come Alive</p>
+<section id="home" class="home-section">
+  <h1 id="promise-legal-header">Promise Legal</h1>
+  <p id="promise-legal-subheader">Come Alive</p>
   <img src="images/blog-image.png" alt="Promise Legal Banner">
-</div>
+</section>
 
 
-<div id="vision" class="section vision-section">
+<section id="vision" class="vision-section">
   <div class="vision-text">
     <h2>Our Vision</h2>
     <p class="section-tagline">Return True</p>
@@ -462,9 +462,9 @@ p {
   <div class="vision-image">
     <img src="images/vision-image.png" alt="Unicorn Image">
   </div>
-</div>
+</section>
 
-<div id="practice-areas" class="section practice-section"><h2>Practice Areas</h2>
+<section id="practice-areas" class="practice-section"><h2>Practice Areas</h2>
   <div class="practice-areas-container">
     <div class="practice-area">
       <h3>Tech and Security</h3>
@@ -479,9 +479,9 @@ p {
       <p>Description here</p>
     </div>
   </div>
-</div>
+</section>
 
-<div id="why-us" class="section why-us-section">
+<section id="why-us" class="why-us-section">
   <div class="why-us-content">
     <h2>Why Us?</h2>
     <p>Traditional Solutions. New Packages.</p>
@@ -499,11 +499,11 @@ p {
 	<figcaption>Your business is out of this world! Your lawyer should be too!</figcaption>
   </figure>
   </div>
-</div>
+</section>
 
 
 <section class="team-section section" id="the-team">
-<h2>The Legal Team</h2>
+<h2>The Team</h2>
   <!-- Alex Shahrestani -->
   <div class="team-member">
     <img src="images/team-image-alex.png" alt="Alex Shahrestani">
@@ -511,6 +511,9 @@ p {
       <h3>Alex Shahrestani</h3>
       <p>Partner</p>
       <!-- Description -->
+	  <p>Alex loves to geek out over tech. Video games, his 3D printer, his coding projects, bioengineering, privacy, cybersecurity… Get him started and he will go on and on…<br/>
+and on…</p>
+	  <p>He also found that he has a knack for brand and IP management. He often looks back on his young, naive belief that he’d find copyright and trademark issues boring, and thinks, “Wow. Was I wrong.”</p>
     </div>
   </div>
   
@@ -520,6 +523,8 @@ p {
       <h3>Maggie Shahrestani</h3>
       <p>Partner</p>
       <!-- Description -->
+	  <p>Maggie finds strong women inspiring. Her mother was the first female U.S. Air Force pilot in a combat situation. Her college friends are mostly women in STEM. Some of her best friends run their own startups selling inventions they helped design. She likes to keep up the trend of surrounding herself with powerful, entrepreneurial women.</p>
+	  <p>Maggie especially enjoys helping companies compete with — and do business with — bigger brands, while holding onto the values that make them unique. She loves the thrill of helping a client enter a first big contract, or the satisfaction of putting an empty legal threat to rest.</p>
     </div>
     <img src="images/team-image-maggie.png" alt="Maggie Shahrestani">
   </div>
@@ -531,6 +536,9 @@ p {
       <h3>Kevin Haynes</h3>
       <p>Attorney</p>
       <!-- Description -->
+	  <p>Kevin’s not just a hotshot lawyer with a solid background in corporate law from his Silicon Valley and Research Triangle days. He’s also an ardent champion of diversity, equity, and inclusion – which fits right in with the core values of Promise Legal.</p>
+	  <p>Kevin’s more than just a legal eagle: he’s deeply committed to giving back to the community. His involvement with nonprofits like the University of Texas Co-op, Vivent Health, Equality Texas, and OutYouth has played a key role in creating a sense of belonging and advocating for equal opportunities for everyone.</p>
+	  <p>There’s more to Kevin than meets the eye. He’s a big tennis enthusiast and a whizz in the kitchen. His passion for learning goes beyond the courtroom, as he has taught at renowned institutions and is a proud alumnus of Rice University and Stanford Law School.</p>
     </div>
   </div>
 
@@ -540,6 +548,10 @@ p {
       <h3>Amber Petríg</h3>
       <p>Attorney</p>
       <!-- Description -->
+	  <p>Having cut her teeth on major international projects such as the Trade Secret Protection Index and work for the World IP Organization, Amber lives and breathes IP. She’s heavily invested in diversity and inclusion in her practice, having focused on minority studies for much of her undergrad and legal education.</p>
+	  <p>Amber’s primary interests are in getting artists and entrepreneurs off the ground. She’s worked with multiple small business owners and musicians and is branching out to all forms of media and entertainment. As the daughter of entrepreneurial parents and a first-generation college grad, Amber knows about the hard work and effort that goes into creating a lasting business.<br/>
+	  <br/>
+	  When she’s not redlining contracts and negotiating the best deals for her clients, Amber spends her time with her fiancé and dog enjoying the great outdoors. She’s an avid foodie and novice horticulturist with a keen eye for the visual arts.</p>
     </div>
     <img src="images/team-image-amber.png" alt="Amber Petríg">
   </div>
@@ -547,16 +559,22 @@ p {
   <!-- Add more team members as needed -->
 </section>
 
-
-<div id="promos" class="section">
+<section>
+<div id="promos" >
   <h2>Promos and Offers</h2>
   <!-- Add promos here -->
 </div>
 
-<div id="press" class="section">
+<div id="promos" >
+  <h2>Events</h2>
+  <!-- Add promos here -->
+</div>
+
+<div id="press" >
   <h2>In The Press</h2>
   <!-- Add press articles or testimonials here -->
 </div>
+</section>
 
 <footer id="contact">
   <p>Contact us at: email@example.com</p>
