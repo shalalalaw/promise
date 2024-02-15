@@ -132,6 +132,7 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 5% 0%;
 }
 
 /* Styles for side-by-side elements within a section on desktop */
@@ -143,6 +144,9 @@ p {
 
 /* Styles for stacked elements within a section on mobile */
 @media (max-width: 767px) {
+  .section {
+  padding: 10% 0%;
+  }
   .section > div {
     min-width: 100%;
     max-width: 100%;
@@ -191,6 +195,19 @@ p {
   color: #623e2a;
 }
 
+@media (max-width: 767px) {
+.vision-text {
+  max-width: 50%;
+  color: #623e2a;
+  display: flex; /* This will enable flexbox layout */
+  flex-direction: column; /* This stacks flex items vertically */
+  justify-content: center; /* This centers the flex items vertically */
+  height: 100%; /* Ensure it has a height to center within */
+  padding: 0 20px; /* This adds padding on the left and right */
+  }
+}
+
+
 .vision-text .section-tagline {
   font-size: 1.5em; /* Adjust the size as needed */
 }
@@ -224,10 +241,11 @@ p {
   background-color: #e46990; /* The pink background color */
   padding: 20px 0; /* Top and bottom padding */
   text-align: center; /* Center text within the header */
+  color: #623e2a;
 }
 
 .practice-area {
-  border: 2px solid #000; /* Black border around each box */
+  border: 2px solid #1e2139; /* Border around each box */
   padding: 20px; /* Padding inside each box */
   margin: 10px; /* Margin between the boxes */
   background-color: #fff; /* White background for the content area */
@@ -253,7 +271,7 @@ p {
 
 /* Header style within the practice section */
 .practice-section > h2 {
-  color: #fff;
+  color: #1e2139;
 }
 
 /* Responsive design for mobile, stacking the boxes */
@@ -263,6 +281,78 @@ p {
     margin: 10px 0; /* Top and bottom margin for stacked boxes */
   }
 }
+
+.why-us-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left; /* Align the text to the left */
+  padding: 50px; /* Adjust padding as needed */
+  background-color: #e8eaec; /* Your chosen background color */
+  color: #2c2832;
+}
+
+.why-us-content {
+  flex: 1;
+  padding-right: 50px; /* Add some padding between text and image */
+}
+
+.why-us-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-us-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.why-us-image figure {
+  text-align: center; /* Center the figure content */
+  margin: 0; /* Remove default margin */
+}
+
+.why-us-image figcaption {
+  margin-top: 1em; /* Space between image and caption */
+  font-style: italic; /* Styling the caption */
+  border: 1px solid #000; /* Example border: 2px solid black */
+  padding: 1em; /* Space inside the border, around the text */
+  display: inline-block; /* This will wrap the border tight around the text */
+  box-sizing: border-box; /* Include padding in the width of the element */
+  border-color: #957c92;
+}
+
+@media (max-width: 767px) {
+  .why-us-section {
+    flex-direction: column; /* Stack the image and text on top of each other on mobile */
+  }
+
+  .why-us-content,
+  .why-us-image {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .why-us-image {
+    order: -1; /* Place the image above the text on mobile */
+  }
+}
+
+/* Adjust the heading and paragraph styles as needed */
+.why-us-content h2 {
+  font-size: 4em; /* Adjust the size as needed */
+  margin-bottom: 0.5em;
+  /* Add any other styles for your heading */
+}
+
+.why-us-content p {
+  font-size: 1em; /* Adjust the size as needed */
+  margin-bottom: 1em;
+  /* Add any other styles for your paragraphs */
+}
+
 
 /* Smaller Screens
   Set maximum and minimum font sizes to prevent the text from becoming too large or too small */
@@ -339,13 +429,26 @@ p {
   </div>
 </div>
 
-<div id="why-us" class="section">
-  <h2>Why Us?</h2>
-  <p>Traditional Solutions. New Packages.</p>
+<div id="why-us" class="section why-us-section">
+  <div class="why-us-content">
+    <h2>Why Us?</h2>
+    <p>Traditional Solutions. New Packages.</p>
+    <p>We have the get-up-and-go to build our own systems,
+    design our own processes, and integrate traditional
+    skills into our practice! We know how to take something
+    old and make it new.</p>
+    <p>At Promise Legal, we value creativity and want to
+    curate solutions for you and your business that match
+    your vibe! Say goodbye to outdated ways of thinking!</p>
+  </div>
   <div class="why-us-image">
-    <img src="images/why-us-image.png" alt="Pixie Image">
+  <figure>
+    <img src="images/why-us-image.png" alt="Astronaut Image">
+	<figcaption>Your business is out of this world! Your lawyer should be too!</figcaption>
+  </figure>
   </div>
 </div>
+
 
 <div id="the-team" class="section">
   <h2>The Legal Team</h2>
