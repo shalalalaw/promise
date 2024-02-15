@@ -387,10 +387,14 @@ section h2 {
   justify-content: center; /* Center the items horizontally */
   width: 100%;
   max-width: 100vw; /* Adjusted for larger screens */
-  margin-bottom: 30px;
-  min-height: 100vh;
   max-height: 100vh;
 }
+
+.team-member > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
 
 div.team-member {
 display: flex;
@@ -575,7 +579,11 @@ and on…</p>
 
   <!-- Kevin Haynes -->
   <div class="team-member">
-    <img src="images/team-image-maggie.png" alt="Kevin Haynes">
+    <span class="image-decoration">
+		<img src="images/team-image-alex.png" alt="Alex Shahrestani" class="go-up-left">
+		<img src="images/team-image-alex.png" alt="Alex Shahrestani" class="top">
+		<img src="images/team-image-alex.png" alt="Alex Shahrestani" class="go-down-right">
+    </span>
     <div class="team-info">
       <h3>Kevin Haynes</h3>
       <p>Attorney</p>
@@ -588,6 +596,10 @@ and on…</p>
 
   <!-- Amber Petríg -->
   <div class="team-member">
+    <span class="image-decoration">
+    <img src="images/team-image-amber.png" alt="Amber Petrig" class="go-up-left">
+	<img src="images/team-image-amber.png" alt="Amber Petrig" class="top">
+  </span>
     <div class="team-info">
       <h3>Amber Petríg</h3>
       <p>Attorney</p>
@@ -597,7 +609,6 @@ and on…</p>
 	  <br/>
 	  When she’s not redlining contracts and negotiating the best deals for her clients, Amber spends her time with her fiancé and dog enjoying the great outdoors. She’s an avid foodie and novice horticulturist with a keen eye for the visual arts.</p>
     </div>
-    <img src="images/team-image-amber.png" alt="Amber Petríg">
   </div>
 
   <!-- Add more team members as needed -->
