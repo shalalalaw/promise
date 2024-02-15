@@ -373,6 +373,58 @@ p {
       font-size: 22px; /* Minimum font size for smaller screens */
     }
   }
+  
+  /*WIP*/
+  .team-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+	background-color: #e8aa76;
+	color: #1e2139;
+  }
+
+  .team-member {
+    margin-bottom: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .team-member:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
+  .team-member img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .team-info {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .team-info h3 {
+    margin: 0;
+    padding-top: 10px;
+  }
+
+  .team-info p {
+    text-align: left;
+  }
+
+  @media (max-width: 767px) {
+    .team-member {
+      width: 95%;
+    }
+  }
 
 
 </style>
@@ -450,10 +502,51 @@ p {
 </div>
 
 
-<div id="the-team" class="section">
-  <h2>The Legal Team</h2>
-  <!-- Add team members here -->
-</div>
+<section class="team-section section" id="the-team">
+<h2>The Legal Team</h2>
+  <!-- Alex Shahrestani -->
+  <div class="team-member">
+    <img src="images/team-image-alex.png" alt="Alex Shahrestani">
+    <div class="team-info">
+      <h3>Alex Shahrestani</h3>
+      <p>Partner</p>
+      <!-- Description -->
+    </div>
+  </div>
+  
+  <!-- Maggie Shahrestani -->
+  <div class="team-member">
+    <div class="team-info">
+      <h3>Maggie Shahrestani</h3>
+      <p>Partner</p>
+      <!-- Description -->
+    </div>
+    <img src="images/team-image-maggie.png" alt="Maggie Shahrestani">
+  </div>
+
+  <!-- Kevin Haynes -->
+  <div class="team-member">
+    <img src="images/team-image-maggie.png" alt="Kevin Haynes">
+    <div class="team-info">
+      <h3>Kevin Haynes</h3>
+      <p>Attorney</p>
+      <!-- Description -->
+    </div>
+  </div>
+
+  <!-- Amber Petríg -->
+  <div class="team-member">
+    <div class="team-info">
+      <h3>Amber Petríg</h3>
+      <p>Attorney</p>
+      <!-- Description -->
+    </div>
+    <img src="images/team-image-amber.png" alt="Amber Petríg">
+  </div>
+
+  <!-- Add more team members as needed -->
+</section>
+
 
 <div id="promos" class="section">
   <h2>Promos and Offers</h2>
