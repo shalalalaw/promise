@@ -411,7 +411,7 @@ section h2 {
 .team-row {
   display: flex;
   align-items: flex-start;
-  max-width: 60%;
+  max-width: 70%;
 }
 
 .col {
@@ -421,14 +421,13 @@ section h2 {
 
 /* Adjust column widths */
 .col-img {
-  min-width: 40%;
-  max-width: 40%;
-  object-fit: scale-down;
+  min-width: 50%;
+  max-width: 50%;
 }
 
 .col-txt {
-  min-width: 60%;
-  max-width: 60%;
+  min-width: 50%;
+  max-width: 50%;
 }
 
 .to-start {
@@ -458,6 +457,16 @@ section h2 {
 .shift-right {
   position: relative;
   left: 5vw;
+}
+
+.increase-size {
+  transform: scale(1.25);
+  transform-origin: center;
+}
+
+.double-size {
+  transform: scale(2);
+  transform-origin: center;
 }
 
 .to-front {
@@ -561,7 +570,7 @@ section h2 {
   <div class="team-member">
     <div class="team-row shift-down shift-left">
 		<div class="col to-end">
-		  <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="col-img">
+		  <img src="images/team-image-alex-accent.png" alt="Alex Shahrestani" class="col-img increase-size">
 		</div>
 		<div class="col col-txt to-start">
 		  <h3>Alex Shahrestani</h3>
@@ -570,7 +579,7 @@ section h2 {
 	</div>
 	<div class="team-row">
 	  <div class="col to-front to-end">
-	  <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="col-img">
+	  <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="col-img increase-size">
 	  </div>
 	  <div class="col col-txt to-start shift-left">
       <!-- Description -->
@@ -580,7 +589,7 @@ and on…</p>
 	</div>
 	<div class="team-row shift-right shift-up">
 	  <div class="col to-end">
-	  <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="col-img">
+	  <img src="images/team-image-alex-accent-2.png" alt="Alex Shahrestani" class="col-img double-size shift-left">
 	  </div>
 	  <div class="col col-txt to-start">
 	  <p>He also found that he has a knack for brand and IP management. He often looks back on his young, naive belief that he’d find copyright and trademark issues boring, and thinks, “Wow. Was I wrong.”</p>
