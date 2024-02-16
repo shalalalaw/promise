@@ -37,7 +37,7 @@ p {
   justify-content: flex-end; /* Aligns the nav items to the right */
   text-decoration-line: none;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 700;
   white-space: nowrap;
   color: #55595B;
@@ -98,7 +98,7 @@ p {
 
 #promise-legal-header {
   font-family: 'Bebas Neue', cursive;
-  font-size: 106px; /* Size for 'Promise Legal' */
+  font-size: 8rem; /* Size for 'Promise Legal' */
   color: #e46990; /* Text color */
   -webkit-text-stroke: 2px #720024; /* Outline thickness and color for better visibility */
   text-stroke: 2px #720024; /* Standard syntax, might not be supported in all browsers */
@@ -111,7 +111,7 @@ p {
 
 #promise-legal-subheader {
   font-family: 'Bebas Neue', cursive;
-  font-size: 60px; /* Size for 'Come Alive' */
+  font-size: 4rem; /* Size for 'Come Alive' */
   color: #e46990; /* Text color */
   -webkit-text-stroke: 2px #720024; /* Outline thickness and color for better visibility */
   text-stroke: 2px #720024; /* Standard syntax, might not be supported in all browsers */
@@ -207,11 +207,11 @@ section h2 {
 
 
 .vision-text .section-tagline {
-  font-size: 1.5em; /* Adjust the size as needed */
+  font-size: 2rem; /* Adjust the size as needed */
 }
 
 .vision-text p {
-  font-size: 1em; /* Adjust the size as needed */
+  font-size: 1rem; /* Adjust the size as needed */
   line-height: 1.6;
 }
 
@@ -340,13 +340,13 @@ section h2 {
 
 /* Adjust the heading and paragraph styles as needed */
 .why-us-content h2 {
-  font-size: 4em; /* Adjust the size as needed */
+  font-size: 4rem; /* Adjust the size as needed */
   margin-bottom: 0.5em;
   /* Add any other styles for your heading */
 }
 
 .why-us-content p {
-  font-size: 1em; /* Adjust the size as needed */
+  font-size: 1rem; /* Adjust the size as needed */
   margin-bottom: 1em;
   /* Add any other styles for your paragraphs */
 }
@@ -356,19 +356,19 @@ section h2 {
   Set maximum and minimum font sizes to prevent the text from becoming too large or too small */
   @media (min-width: 768px) {
     .home-section h1 {
-      font-size: 106px; /* Maximum font size for larger screens */
+      font-size: 8rem; /* Maximum font size for larger screens */
     }
     .home-section p {
-      font-size: 42px; /* Maximum font size for larger screens */
+      font-size: 3rem; /* Maximum font size for larger screens */
     }
   }
 
   @media (max-width: 480px) {
     .home-section h1 {
-      font-size: 56px; /* Minimum font size for smaller screens */
+      font-size: 4rem; /* Minimum font size for smaller screens */
     }
     .home-section p {
-      font-size: 22px; /* Minimum font size for smaller screens */
+      font-size: 1.5rem; /* Minimum font size for smaller screens */
     }
   }
   
@@ -380,78 +380,88 @@ section h2 {
   padding: 50px 0;
   background-color: #e8aa76;
   color: #1e2139;
+  text-align: left;
+  font-size: 2rem;
+  padding-left: 5%;
+
+}
+
+.team-section h3 {
+  font-size: 3rem;
+}
+
+.team-section > div:nth-child(odd) {
+  flex-direction: row;
+}
+
+.team-section > div:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .team-member {
   align-items: center;
-  justify-content: center; /* Center the items horizontally */
-  width: 100%;
-  max-width: 100vw; /* Adjusted for larger screens */
-  max-height: 100vh;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-.team-member > span {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  }
-
-div.team-member {
-display: flex;
+  width: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin-bottom: 5%;
+  margin-left: 10%;
 }
 
-span.image-decoration {
-display: flex;
-max-width: 40%;
+.team-row {
+  display: flex;
+  align-items: flex-start;
+  max-width: 60%;
 }
 
-.team-section div:nth-child(even) {
-  flex-direction: row;
+.col {
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.team-section div:nth-child(odd) {
-  flex-direction: row-reverse;
+/* Adjust column widths */
+.col-img {
+  min-width: 40%;
+  max-width: 40%;
+  object-fit: scale-down;
 }
 
-.team-member img {
-  width: 40%; /* Adjusted for image width */
-  max-width: 50%;
-  height: auto;
+.col-txt {
+  min-width: 60%;
+  max-width: 60%;
 }
 
-.image-decoration img{
-max-width: 50%;
-min-width: 40%;
+.to-start {
+  align-items: flex-start;
 }
 
-img.go-up-left{
-transform: translate(50%, -50%);
-}
-img.go-down-right{
-transform: translate(-50%, 50%);
-}
-img.top{
-z-index:99;
+.to-end {
+  align-items: flex-end;
 }
 
-.team-info {
-  max-width: 60%; /* Adjusted for text width */
-  min-width: 50%;
-  padding: 20px;
-  text-align: center;
-  font-size: 21px;
+/* Utility classes for shifting rows */
+.shift-up {
+  position: relative;
+  top: -5vh;
 }
 
-.team-info h3 {
-  margin: 0;
-  padding-top: 10px;
-  font-size: 31px;
+.shift-down {
+  position: relative;
+  top: 5vh;
 }
 
-.team-info p {
-  text-align: left;
+.shift-left {
+  position: relative;
+  left: -5vw;
+}
+
+.shift-right {
+  position: relative;
+  left: 5vw;
+}
+
+.to-front {
+  z-index: 99;
 }
 
 @media (max-width: 767px) {
@@ -549,18 +559,32 @@ z-index:99;
 <h2>The Team</h2>
   <!-- Alex Shahrestani -->
   <div class="team-member">
-  <span class="image-decoration">
-    <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="go-up-left">
-    <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="top">
-    <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="go-down-right">
-  </span>
-    <div class="team-info">
-      <h3>Alex Shahrestani</h3>
-      <p>Partner</p>
+    <div class="team-row shift-down shift-left">
+		<div class="col to-end">
+		  <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="col-img">
+		</div>
+		<div class="col col-txt to-start">
+		  <h3>Alex Shahrestani</h3>
+		  <p>Partner</p>
+		</div>
+	</div>
+	<div class="team-row">
+	  <div class="col to-front to-end">
+	  <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="col-img">
+	  </div>
+	  <div class="col col-txt to-start shift-left">
       <!-- Description -->
 	  <p>Alex loves to geek out over tech. Video games, his 3D printer, his coding projects, bioengineering, privacy, cybersecurity… Get him started and he will go on and on…<br/>
 and on…</p>
+	  </div>
+	</div>
+	<div class="team-row shift-right shift-up">
+	  <div class="col to-end">
+	  <img src="images/team-image-alex.png" alt="Alex Shahrestani" class="col-img">
+	  </div>
+	  <div class="col col-txt to-start">
 	  <p>He also found that he has a knack for brand and IP management. He often looks back on his young, naive belief that he’d find copyright and trademark issues boring, and thinks, “Wow. Was I wrong.”</p>
+	  </div>
     </div>
   </div>
   
