@@ -390,11 +390,11 @@ section h2 {
   font-size: 3rem;
 }
 
-.team-section > div:nth-child(odd) {
+.team-section > div:nth-child(even) .team-row {
   flex-direction: row;
 }
 
-.team-section > div:nth-child(even) {
+.team-section > div:nth-child(odd) .team-row {
   flex-direction: row-reverse;
 }
 
@@ -423,6 +423,7 @@ section h2 {
 .col-img {
   min-width: 50%;
   max-width: 50%;
+  object-fit: contain;
 }
 
 .col-txt {
@@ -436,6 +437,10 @@ section h2 {
 
 .to-end {
   align-items: flex-end;
+}
+
+.to-center {
+  align-items: center;
 }
 
 /* Utility classes for shifting rows */
@@ -471,6 +476,22 @@ section h2 {
 
 .to-front {
   z-index: 99;
+}
+
+.text-right-align {
+text-align: right;
+}
+
+.text-left-align {
+text-align: left;
+}
+
+.set-row {
+flex-direction: row !important;
+}
+
+.set-reverse {
+flex-direction: reverse-row !important;
 }
 
 @media (max-width: 767px) {
@@ -591,7 +612,7 @@ and on…</p>
 	  <div class="col to-end">
 	  <img src="images/team-image-alex-accent-2.png" alt="Alex Shahrestani" class="col-img double-size shift-left">
 	  </div>
-	  <div class="col col-txt to-start">
+	  <div class="col col-txt to-start text-right-align">
 	  <p>He also found that he has a knack for brand and IP management. He often looks back on his young, naive belief that he’d find copyright and trademark issues boring, and thinks, “Wow. Was I wrong.”</p>
 	  </div>
     </div>
@@ -599,17 +620,32 @@ and on…</p>
   
   <!-- Maggie Shahrestani -->
   <div class="team-member">
-  <span class="image-decoration">
-    <img src="images/team-image-maggie.png" alt="Maggie Shahrestani" class="go-up-left">
-	<img src="images/team-image-maggie.png" alt="Maggie Shahrestani" class="top">
-  </span>
-    <div class="team-info">
-      <h3>Maggie Shahrestani</h3>
-      <p>Partner</p>
+    <div class="team-row shift-right">
+		<div class="col to-end">
+		  <img src="images/team-image-maggie-accent.png" alt="Maggie Shahrestani" class="col-img increase-size">
+		</div>
+		<div class="col col-txt to-end shift-left">
+		  <h3>Maggie Shahrestani</h3>
+		  <p>Partner</p>
+		</div>
+	</div>
+	<div class="team-row shift-right">
+	  <div class="col to-end">
+	  <img src="images/team-image-maggie.png" alt="Maggie Shahrestani" class="col-img increase-size shift-right shift-down">
+	  </div>
+	  <div class="col col-txt to-end shift-left shift-up">
       <!-- Description -->
 	  <p>Maggie finds strong women inspiring. Her mother was the first female U.S. Air Force pilot in a combat situation. Her college friends are mostly women in STEM. Some of her best friends run their own startups selling inventions they helped design. She likes to keep up the trend of surrounding herself with powerful, entrepreneurial women.</p>
+	  </div>
+	</div>
+	<div class="team-row set-row shift-up">
+	  <div class="col to-end">
+	  <img src="images/team-image-maggie-accent-2.png" alt="Maggie Shahrestani" class="col-img double-size shift-down">
+	  </div>
+	  <div class="col col-txt to-end shift-up">
 	  <p>Maggie especially enjoys helping companies compete with — and do business with — bigger brands, while holding onto the values that make them unique. She loves the thrill of helping a client enter a first big contract, or the satisfaction of putting an empty legal threat to rest.</p>
     </div>
+  </div>
   </div>
 
   <!-- Kevin Haynes -->
