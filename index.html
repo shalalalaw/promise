@@ -122,6 +122,15 @@ p {
   z-index: 2;
 }
 
+@media (max-width: 767px) {
+#promise-legal-header{
+font-size: 4rem;
+}
+#promise-legal-subheader{
+font-size: 2rem;
+}
+}
+
 /* Styles for each section */
 section {
   min-height: 100vh;
@@ -201,7 +210,7 @@ section h2 {
   flex-direction: column; /* This stacks flex items vertically */
   justify-content: center; /* This centers the flex items vertically */
   height: 100%; /* Ensure it has a height to center within */
-  padding: 0 20px; /* This adds padding on the left and right */
+  padding: 0 5px; /* This adds padding on the left and right */
   }
 }
 
@@ -216,7 +225,7 @@ section h2 {
 }
 
 .vision-image {
-  max-width: 50%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -227,11 +236,18 @@ section h2 {
   height: auto;
 }
 
+@media (max-width: 767px) {
+.vision-image img{
+min-width: 95vw;
+max-width: 95vw;
+}
+}
+
 .vision-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 5px;
   background: #f1f1f0; /* Updated background color */
 }
 
