@@ -416,7 +416,7 @@ max-width: 95vw;
 }
 
 .team-section h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .team-section > div:nth-child(even) .team-row {
@@ -515,11 +515,11 @@ text-align: right;
 text-align: left;
 }
 
-.set-row {
+.set-row, .team-section > div:nth-child(n) .team-row .set-row {
 flex-direction: row !important;
 }
 
-.set-reverse {
+.set-reverse, .team-section > div:nth-child(n) .team-row .set-reverse {
 flex-direction: reverse-row !important;
 }
 
@@ -648,8 +648,8 @@ margin-right: 15%;
   </div>
 </section>
 
-<section class="team-section smaller-text" id="the-team">
-<h2 class="bottom-margin">The Team</h2>
+<section class="team-section smaller-text" id="the-team" style="padding-left:10%;padding-right: 10%;">
+<h2>The Team</h2>
   <!-- Alex Shahrestani -->
   <div class="team-member">
     <div class="team-row shift-left">
@@ -687,25 +687,25 @@ and on…</p>
 		<div class="col to-end">
 		  <img src="images/team-image-maggie-accent.png" alt="Maggie Shahrestani" class="col-img accent-img increase-size">
 		</div>
-		<div class="col col-txt to-end shift-left shift-up">
+		<div class="col col-txt to-end shift-left shift-up increase-size">
 		  <h3>Maggie Shahrestani</h3>
 		  <p>Partner</p>
 		</div>
 	</div>
 	<div class="team-row shift-right shift-up">
 	  <div class="col to-end shift-right">
-	  <img src="images/team-image-maggie.png" alt="Maggie Shahrestani" class="col-img increase-size shift-right">
+	  <img src="images/team-image-maggie.png" alt="Maggie Shahrestani" class="col-img increase-size shift-right shift-down">
 	  </div>
-	  <div class="col col-txt to-end shift-left shift-up">
+	  <div class="col col-txt to-end shift-left increase-size">
       <!-- Description -->
 	  <p>Maggie finds strong women inspiring. Her mother was the first female U.S. Air Force pilot in a combat situation. Her college friends are mostly women in STEM. Some of her best friends run their own startups selling inventions they helped design. She likes to keep up the trend of surrounding herself with powerful, entrepreneurial women.</p>
 	  </div>
 	</div>
 	<div class="team-row set-row">
 	  <div class="col to-start">
-	  <img src="images/team-image-maggie-accent-2.png" alt="Maggie Shahrestani" class="col-img accent-img double-size shift-up">
+	  <img src="images/team-image-maggie-accent-2.png" alt="Maggie Shahrestani" class="col-img accent-img double-size">
 	  </div>
-	  <div class="col col-txt to-end shift-left shift-down">
+	  <div class="col col-txt to-end shift-left shift-down increase-size">
 	  <p>Maggie especially enjoys helping companies compete with — and do business with — bigger brands, while holding onto the values that make them unique. She loves the thrill of helping a client enter a first big contract, or the satisfaction of putting an empty legal threat to rest.</p>
     </div>
   </div>
@@ -713,11 +713,11 @@ and on…</p>
 
   <!-- Kevin Haynes -->
     <div class="team-member">
-    <div class="team-row">
+    <div class="team-row set-row">
 		<div class="col to-end">
-		  <img src="images/team-image-alex.png" alt="Kevin Haynes" class="col-img">
+		  <img src="images/team-image-alex.png" alt="Kevin Haynes" class="col-img increase-size">
 		</div>
-		<div class="col col-txt to-start">
+		<div class="col col-txt to-start increase-size">
 		  <h3>Kevin Haynes</h3>
 		  <p>Attorney</p>
 		  <p>Kevin’s not just a hotshot lawyer with a solid background in corporate law from his Silicon Valley and Research Triangle days. He’s also an ardent champion of diversity, equity, and inclusion – which fits right in with the core values of Promise Legal.</p>
@@ -725,31 +725,30 @@ and on…</p>
 	</div>
 	<div class="team-row">
 	  <div class="col to-front to-end">
-	  <img src="images/team-image-alex.png" alt="Kevin Haynes" class="col-img">
+	  <img src="images/team-image-alex.png" alt="Kevin Haynes" class="col-img increase-size">
 	  </div>
-	  <div class="col col-txt to-start">
+	  <div class="col col-txt to-start increase-size">
       <!-- Description -->
 	  <p>Kevin’s also committed to giving back to the community. His involvement with nonprofits like the University of Texas Co-op, Vivent Health, Equality Texas, and OutYouth has played a key role in creating a sense of belonging and advocating for equal opportunities for everyone.</p>
-and on…</p>
 	  </div>
 	</div>
 	<div class="team-row">
 	  <div class="col to-end">
-	  <img src="images/team-image-alex.png" alt="Kevin Haynes" class="col-img">
+	  <img src="images/team-image-alex.png" alt="Kevin Haynes" class="col-img increase-size">
 	  </div>
-	  <div class="col col-txt to-start text-right-align">
+	  <div class="col col-txt to-start text-right-align increase-size">
 	  <p>A tennis enthusiast and a whizz in the kitchen, his passion for learning goes beyond the courtroom, as he has taught at renowned institutions and is a proud alumnus of Rice University and Stanford Law School.</p>
 	  </div>
     </div>
   </div>
 
   <!-- Amber Petríg -->
-    <div class="team-member smaller-text">
+    <div class="team-member">
     <div class="team-row">
 		<div class="col to-end">
 		  <img src="images/team-image-amber.png" alt="Amber Petríg" class="col-img increase-size">
 		</div>
-		<div class="col col-txt to-end shift-left">
+		<div class="col col-txt to-end shift-left increase-size">
 		  <h3>Amber Petríg</h3>
 		  <p>Attorney</p>
 		</div>
@@ -758,16 +757,16 @@ and on…</p>
 	  <div class="col to-end">
 	  <img src="images/team-image-amber.png" alt="Amber Petríg" class="col-img increase-size">
 	  </div>
-	  <div class="col col-txt to-end shift-left shift-up">
+	  <div class="col col-txt to-end shift-left shift-up increase-size">
       <!-- Description -->
 	  <p>Having cut her teeth on major international projects such as the Trade Secret Protection Index and work for the World IP Organization, Amber lives and breathes IP. She’s heavily invested in diversity and inclusion in her practice, having focused on minority studies for much of her undergrad and legal education.</p>
 	  </div>
 	</div>
 	<div class="team-row set-row">
 	  <div class="col to-end">
-	  <img src="images/team-image-amber.png" alt="Amber Petríg" class="col-img double-size">
+	  <img src="images/team-image-amber.png" alt="Amber Petríg" class="col-img increase-size">
 	  </div>
-	  <div class="col col-txt to-end shift-up">
+	  <div class="col col-txt to-end shift-up increase-size">
 	  <p>Amber’s primary interests are in getting artists and entrepreneurs off the ground. She’s worked with multiple small business owners and musicians and is branching out to all forms of media and entertainment. As the daughter of entrepreneurial parents and a first-generation college grad, Amber knows about the hard work and effort that goes into creating a lasting business.<br/>
 	  <br/>
 	  When she’s not redlining contracts and negotiating the best deals for her clients, Amber spends her time with her fiancé and dog enjoying the great outdoors. She’s an avid foodie and novice horticulturist with a keen eye for the visual arts.</p>
