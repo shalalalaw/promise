@@ -19,8 +19,6 @@ body {
 }
 
 body, h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
 	line-height: 1em;
 	max-width: 100vw;
   }
@@ -30,6 +28,12 @@ p {
   font-family: "Didact Gothic", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+@media (max-width: 767px) {
+body {
+flex-direction: column !important;
+}
 }
 
 .navbar {
@@ -76,6 +80,30 @@ p {
   color: #0d1216;
 }
 
+.navbar .menu-icon {
+  display: none; /* Hide menu icon by default */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .navbar ul {
+    display: none; /* Hide the menu items on small screens */
+    flex-direction: column; /* Stack them vertically when displayed */
+	align-items: center;
+	justify-content: center;
+  }
+
+  .navbar .menu-icon {
+    display: block; /* Show menu icon on small screens */
+  }
+
+  .navbar li {
+    display: block; /* Stack list items vertically */
+  }
+}
+
+
 .background-img1, .background-img2 {
     width: 100%;
     height: auto;
@@ -110,7 +138,7 @@ p {
   -webkit-text-stroke: 2px #720024; /* Outline thickness and color for better visibility */
   text-stroke: 2px #720024; /* Standard syntax, might not be supported in all browsers */
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%) !important;
   z-index: 2;
@@ -123,7 +151,7 @@ p {
   -webkit-text-stroke: 2px #720024; /* Outline thickness and color for better visibility */
   text-stroke: 2px #720024; /* Standard syntax, might not be supported in all browsers */
   position: absolute;
-  top: calc(50% + 60px); /* Positioning below the 'Promise Legal' text */
+  top: calc(40% + 6rem); /* Positioning below the 'Promise Legal' text */
   left: 50%;
   transform: translateX(-50%) !important;
   z-index: 2;
@@ -208,22 +236,10 @@ section h2 {
     z-index: 2;
     white-space: nowrap; /* Prevents the text from wrapping */
   }
-
-.vision-text {
+  
+  .vision-text {
   max-width: 50%;
   color: #623e2a;
-}
-
-@media (max-width: 767px) {
-.vision-text {
-  max-width: 50%;
-  color: #623e2a;
-  display: flex; /* This will enable flexbox layout */
-  flex-direction: column; /* This stacks flex items vertically */
-  justify-content: center; /* This centers the flex items vertically */
-  height: 100%; /* Ensure it has a height to center within */
-  padding: 0 5px; /* This adds padding on the left and right */
-  }
 }
 
 .vision-section {
@@ -256,13 +272,23 @@ section h2 {
 }
 
 @media (max-width: 767px) {
-.vision-section{
-padding:0;
+.vision-section {
+  max-width: 100%;
+  color: #623e2a;
+  display: flex; /* This will enable flexbox layout */
+  flex-direction: column; /* This stacks flex items vertically */
+  justify-content: center; /* This centers the flex items vertically */
+  height: 100%; /* Ensure it has a height to center within */
+  padding: 0; /* This adds padding on the left and right */
+  margin: 0;
 }
-.vision-image img{
+
+	.vision-image img {
 min-width: 95vw;
 max-width: 95vw;
-}
+margin: 0;
+padding: 0;
+	}
 }
 
 .practice-section {
@@ -316,14 +342,14 @@ max-width: 95vw;
   align-items: center;
   justify-content: center;
   text-align: left; /* Align the text to the left */
-  padding: 50px; /* Adjust padding as needed */
+  padding: 5%; /* Adjust padding as needed */
   background-color: #e8eaec; /* Your chosen background color */
   color: #2c2832;
 }
 
 .why-us-content {
   flex: 1;
-  padding-right: 50px; /* Add some padding between text and image */
+  padding-right: 5%; /* Add some padding between text and image */
 }
 
 .why-us-image {
@@ -361,11 +387,7 @@ max-width: 95vw;
   .why-us-content,
   .why-us-image {
     width: 100%;
-    padding: 20px;
-  }
-
-  .why-us-image {
-    order: -1; /* Place the image above the text on mobile */
+    padding: 5px;
   }
 }
 
@@ -402,17 +424,16 @@ max-width: 95vw;
     }
   }
   
-  /*WIP*/
 .team-section {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0;
   background-color: #e8aa76;
   color: #1e2139;
   text-align: left;
   font-size: 2rem;
   padding-left: 5%;
+  padding-bottom: 10%;
 }
 
 .team-section h3 {
@@ -622,11 +643,43 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(item);
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+});
+
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Select the menu icon
+  var menuIcon = document.querySelector('.navbar .menu-icon');
+  
+  // Add a click event listener to the menu icon
+  menuIcon.addEventListener('click', function() {
+    // Select the menu (ul)
+    var menu = document.querySelector('.navbar ul');
+    
+    // Check if the menu is already displayed
+    if (menu.style.display === "block") {
+      // Hide the menu if it is displayed
+      menu.style.display = "none";
+    } else {
+      // Show the menu if it is hidden
+      menu.style.display = "block";
+    }
+  });
+});
 </script>
 </head>
 <body>
-
 <header class="navbar">
+  <div class="menu-icon">☰</div> <!-- Menu icon; can be replaced with an image or SVG -->
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#vision">Vision</a></li>
@@ -638,6 +691,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <li><a href="#contact">Contact</a></li>
   </ul>
 </header>
+
 
 <section id="home" class="home-section">
   <h1 id="promise-legal-header" class="shift-up-on-enter-slow">Promise Legal</h1>
@@ -702,7 +756,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="team-member">
     <div class="team-row shift-left">
 		<div class="col to-end animate-on-scroll">
-		  <img src="images/team-image-alex-accent.png" alt="Alex Shahrestani" class="col-img increase-size shift-left accent-img">
+		  <img src="images/team-image-alex-accent.png" alt="Alex Shahrestani" class="col-img increase-size shift-left">
 		</div>
 		<div class="col col-txt to-start shift-right increase-size">
 		<div class="animate-on-scroll">
@@ -726,7 +780,7 @@ and on…</p>
 	<div class="team-row shift-right shift-up">
 	  <div class="col to-end increase-size">
 	  <div class="animate-on-scroll">
-	  <img src="images/team-image-alex-accent-2.png" alt="Alex Shahrestani" class="col-img increase-size shift-right shift-down accent-img">
+	  <img src="images/team-image-alex-accent-2.png" alt="Alex Shahrestani" class="col-img increase-size shift-right shift-down">
 	  </div>
 	  </div>
 	  <div class="col animate-on-scroll col-txt to-start text-right-align shift-up increase-size">
@@ -742,7 +796,7 @@ and on…</p>
     <div class="team-row">
 		<div class="col to-end increase-size shift-right">
 		<div class="animate-on-scroll">
-		  <img src="images/team-image-maggie-accent.png" alt="Maggie Shahrestani" class="col-img accent-img increase-size shift-right">
+		  <img src="images/team-image-maggie-accent.png" alt="Maggie Shahrestani" class="col-img increase-size shift-right">
 		</div>
 		</div>
 		<div class="col col-txt to-end shift-up increase-size">
@@ -765,7 +819,7 @@ and on…</p>
 	</div>
 	<div class="team-row set-row shift-left">
 	  <div class="col animate-on-scroll to-start">
-	  <img src="images/team-image-maggie-accent-2.png" alt="Maggie Shahrestani" class="col-img accent-img double-size">
+	  <img src="images/team-image-maggie-accent-2.png" alt="Maggie Shahrestani" class="col-img double-size">
 	  </div>
 	  <div class="col col-txt to-end shift-left shift-down increase-size text-right-align">
 	  <div class="animate-on-scroll">
