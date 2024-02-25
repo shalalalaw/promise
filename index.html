@@ -112,7 +112,7 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) !important;
   z-index: 2;
 }
 
@@ -125,7 +125,7 @@ p {
   position: absolute;
   top: calc(50% + 60px); /* Positioning below the 'Promise Legal' text */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) !important;
   z-index: 2;
 }
 
@@ -590,7 +590,7 @@ margin-right: 15%;
 @keyframes shiftUp {
   from {
     transform: translateY(10%);
-    opacity: 0;
+    opacity: 0.5;
   }
   to {
     transform: translateY(0);
@@ -600,6 +600,10 @@ margin-right: 15%;
 
 .shift-up-on-enter {
   animation: shiftUp 1s ease-out none;
+}
+
+.shift-up-on-enter-slow {
+  animation: shiftUp 2s ease-out none;
 }
 </style>
 <script>
@@ -635,10 +639,10 @@ document.addEventListener('DOMContentLoaded', () => {
   </ul>
 </header>
 
-<section id="home" class="home-section shift-up-on-enter">
-  <h1 id="promise-legal-header">Promise Legal</h1>
-  <p id="promise-legal-subheader">Come Alive</p>
-  <img src="images/blog-banner.png" alt="Promise Legal Banner">
+<section id="home" class="home-section">
+  <h1 id="promise-legal-header" class="shift-up-on-enter-slow">Promise Legal</h1>
+  <p id="promise-legal-subheader" class="shift-up-on-enter-slow">Come Alive</p>
+  <img src="images/blog-banner.png" alt="Promise Legal Banner" class="shift-up-on-enter">
 </section>
 
 
@@ -700,9 +704,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		<div class="col to-end animate-on-scroll">
 		  <img src="images/team-image-alex-accent.png" alt="Alex Shahrestani" class="col-img increase-size shift-left accent-img">
 		</div>
-		<div class="col animate-on-scroll col-txt to-start shift-right increase-size">
+		<div class="col col-txt to-start shift-right increase-size">
+		<div class="animate-on-scroll">
 		  <h3>Alex Shahrestani</h3>
 		  <p>Partner</p>
+		</div>
 		</div>
 	</div>
 	<div class="team-row">
@@ -711,16 +717,22 @@ document.addEventListener('DOMContentLoaded', () => {
 	  </div>
 	  <div class="col animate-on-scroll col-txt to-start shift-up increase-size">
       <!-- Description -->
+	  <div class="animate-on-scroll">
 	  <p>Alex loves to geek out over tech. Video games, his 3D printer, his coding projects, bioengineering, privacy, cybersecurity… Get him started and he will go on and on…<br/>
 and on…</p>
 	  </div>
+	  </div>
 	</div>
 	<div class="team-row shift-right shift-up">
-	  <div class="col animate-on-scroll to-end increase-size">
+	  <div class="col to-end increase-size">
+	  <div class="animate-on-scroll">
 	  <img src="images/team-image-alex-accent-2.png" alt="Alex Shahrestani" class="col-img increase-size shift-right shift-down accent-img">
 	  </div>
+	  </div>
 	  <div class="col animate-on-scroll col-txt to-start text-right-align shift-up increase-size">
+	  <div class="animate-on-scroll">
 	  <p>He also found that he has a knack for brand and IP management. He often looks back on his young, naive belief that he’d find copyright and trademark issues boring, and thinks, “Wow. Was I wrong.”</p>
+	  </div>
 	  </div>
     </div>
   </div>
@@ -728,63 +740,81 @@ and on…</p>
   <!-- Maggie Shahrestani -->
   <div class="team-member bottom-margin">
     <div class="team-row">
-		<div class="col animate-on-scroll to-end increase-size shift-right">
-		  <img src="images/team-image-maggie-accent.png" alt="Maggie Shahrestani" class="col-img accent-img increase-size">
+		<div class="col to-end increase-size shift-right">
+		<div class="animate-on-scroll">
+		  <img src="images/team-image-maggie-accent.png" alt="Maggie Shahrestani" class="col-img accent-img increase-size shift-right">
 		</div>
-		<div class="col animate-on-scroll col-txt to-end shift-left shift-up increase-size">
+		</div>
+		<div class="col col-txt to-end shift-up increase-size">
+		<div class="animate-on-scroll">
 		  <h3>Maggie Shahrestani</h3>
 		  <p>Partner</p>
 		</div>
+		</div>
 	</div>
-	<div class="team-row shift-up">
+	<div class="team-row shift-up shift-right">
 	  <div class="col animate-on-scroll to-end shift-right">
 	  <img src="images/team-image-maggie.png" alt="Maggie Shahrestani" class="col-img increase-size shift-right shift-down">
 	  </div>
-	  <div class="col animate-on-scroll col-txt to-end shift-left increase-size">
+	  <div class="col col-txt to-end shift-left increase-size">
       <!-- Description -->
+	  <div class="animate-on-scroll">
 	  <p>Maggie finds strong women inspiring. Her mother was the first female U.S. Air Force pilot in a combat situation. Her college friends are mostly women in STEM. Some of her best friends run their own startups selling inventions they helped design. She likes to keep up the trend of surrounding herself with powerful, entrepreneurial women.</p>
+	  </div>
 	  </div>
 	</div>
 	<div class="team-row set-row shift-left">
 	  <div class="col animate-on-scroll to-start">
 	  <img src="images/team-image-maggie-accent-2.png" alt="Maggie Shahrestani" class="col-img accent-img double-size">
 	  </div>
-	  <div class="col animate-on-scroll col-txt to-end shift-left shift-down increase-size text-right-align">
+	  <div class="col col-txt to-end shift-left shift-down increase-size text-right-align">
+	  <div class="animate-on-scroll">
 	  <p>Maggie especially enjoys helping companies compete with — and do business with — bigger brands, while holding onto the values that make them unique. She loves the thrill of helping a client enter a first big contract, or the satisfaction of putting an empty legal threat to rest.</p>
     </div>
+	</div>
   </div>
   </div>
 
   <!-- Kevin Haynes -->
     <div class="team-member">
     <div class="team-row set-reverse shift-right">
-		<div class="col animate-on-scroll to-end shift-right">
-		  <img src="images/team-image-kevin-accent.png" alt="Kevin Haynes" class="col-img increase-size shift-right left-padding">
+		<div class="col to-end shift-right increase-size">
+		<div class="animate-on-scroll">
+		  <img src="images/team-image-kevin-accent.png" alt="Kevin Haynes" class="col-img shift-right left-padding">
 		</div>
-		<div class="col animate-on-scroll col-txt to-start increase-size shift-left">
+		</div>
+		<div class="col col-txt to-start increase-size shift-left">
+		<div class="animate-on-scroll">
 		  <h3>Kevin Haynes</h3>
 		  <p>Attorney</p>
 		  <p>Kevin’s not just a hotshot lawyer with a solid background in corporate law from his Silicon Valley and Research Triangle days. He’s also an ardent champion of diversity, equity, and inclusion – which fits right in with the core values of Promise Legal.</p>
 		</div>
+		</div>
 	</div>
 	<div class="team-row shift-down shift-left">
 	  <div class="col animate-on-scroll to-front to-end shift-left">
-	  <img src="images/team-image-kevin-accent-2.png" alt="Kevin Haynes" class="col-img double-size shift-left">
+	  <img src="images/team-image-kevin-accent-2.png" alt="Kevin Haynes" class="col-img double-size shift-left top-padding bottom-padding">
 	  </div>
-	  <div class="col animate-on-scroll col-txt to-start increase-size shift-left text-right-align">
+	  <div class="col col-txt to-start increase-size shift-left text-right-align">
       <!-- Description -->
+	  <div class="animate-on-scroll">
 	  <p class="shift-left">Kevin’s also committed to giving back to the community. His involvement with nonprofits like the University of Texas Co-op, Vivent Health, Equality Texas, and OutYouth has played a key role in creating a sense of belonging and advocating for equal opportunities for everyone.</p>
 	  </div>
-	  <div class="col animate-on-scroll double-size to-front">
+	  </div>
+	  <div class="col double-size to-front">
+	  <div class="animate-on-scroll">
 	  <img src="images/team-image-kevin.png" alt="Kevin Haynes" class="col-img double-size left-padding">
+	  </div>
 	  </div>
 	</div>
 	<div class="team-row set-reverse shift-down">
 	  <div class="col animate-on-scroll to-end shift-down">
 	  <img src="images/team-image-kevin-accent-3.png" alt="Kevin Haynes" class="col-img increase-size">
 	  </div>
-	  <div class="col animate-on-scroll col-txt to-start text-left-align increase-size shift-down shift-left">
+	  <div class="col col-txt to-start text-left-align increase-size shift-down shift-left">
+	  <div class="animate-on-scroll">
 	  <p>A tennis enthusiast and a whizz in the kitchen, his passion for learning goes beyond the courtroom, as he has taught at renowned institutions and is a proud alumnus of Rice University and Stanford Law School.</p>
+	  </div>
 	  </div>
     </div>
   </div>
@@ -792,31 +822,41 @@ and on…</p>
   <!-- Amber Petríg -->
     <div class="team-member shift-up">
     <div class="team-row shift-right">
-		<div class="col animate-on-scroll to-end shift-right increase-size">
-		  <img src="images/team-image-amber-accent.png" alt="Amber Petríg" class="col-img increase-size shift-right">
+		<div class="col to-end shift-right increase-size">
+		<div class="animate-on-scroll">
+		  <img src="images/team-image-amber-accent.png" alt="Amber Petríg" class="col-img increase-size shift-right left-margin">
 		</div>
-		<div class="col animate-on-scroll col-txt to-end increase-size shift-down">
+		</div>
+		<div class="col col-txt to-end increase-size shift-down shift-right">
+		<div class="animate-on-scroll">
 		  <h3>Amber Petríg</h3>
 		  <p>Attorney</p>
 		  <!-- Description -->
 		  <p>Having cut her teeth on major international projects such as the Trade Secret Protection Index and work for the World IP Organization, Amber lives and breathes IP. She’s heavily invested in diversity and inclusion in her practice, having focused on minority studies for much of her undergrad and legal education.</p>
 		  </div>
+		  </div>
 		</div>
-	<div class="team-row set-row shift-up">
-	  <div class="col animate-on-scroll to-end shift-left double-size right-margin shift-up">
+	<div class="team-row set-row shift-up shift-left">
+	  <div class="animate-on-scroll">
+	  <div class="col to-end shift-left">
 	  <img src="images/team-image-amber-accent-2.png" alt="Amber Petríg" class="col-img double-size shift-left shift-up right-margin">
 	  </div>
-	  <div class="col animate-on-scroll col-txt to-end increase-size text-right-align left-margin top-margin">
+	  </div>
+	  <div class="col col-txt to-end increase-size text-right-align left-margin top-margin shift-right">
+	  <div class="animate-on-scroll">
 	  <p>Amber’s primary interests are in getting artists and entrepreneurs off the ground. She’s worked with multiple small business owners and musicians and is branching out to all forms of media and entertainment. As the daughter of entrepreneurial parents and a first-generation college grad, Amber knows about the hard work and effort that goes into creating a lasting business.</p>
+	  </div>
 	  </div>
 	</div>
 	  <div class="team-row set-row shift-up">
-	  <div class="col animate-on-scroll to-end double-size bottom-margin">
-	  <img src="images/team-image-amber.png" alt="Amber Petríg" class="col-img bottom-margin shift-right shift-up">
+	  <div class="col to-end double-size bottom-margin">
+	  <img src="images/team-image-amber.png" alt="Amber Petríg" class="col-img bottom-margin shift-right shift-up animate-on-scroll">
 	  </div>
-	  <div class="col animate-on-scroll col-txt increase-size text-right-align shift-down">
+	  <div class="col col-txt increase-size text-right-align shift-down">
+	  <div class="animate-on-scroll">
 	  <p>When she’s not redlining contracts and negotiating the best deals for her clients, Amber spends her time with her fiancé and dog enjoying the great outdoors. She’s an avid foodie and novice horticulturist with a keen eye for the visual arts.</p>
     </div>
+	</div>
     </div>
   </div>
   <!-- Add more team members as needed -->
@@ -824,17 +864,17 @@ and on…</p>
 
 <section>
 <div id="promos" >
-  <h2>Promos and Offers</h2>
+  <h2 class="animate-on-scroll">Promos and Offers</h2>
   <!-- Add promos here -->
 </div>
 
 <div id="promos" >
-  <h2>Events</h2>
+  <h2 class="animate-on-scroll">Events</h2>
   <!-- Add promos here -->
 </div>
 
 <div id="press" >
-  <h2>In The Press</h2>
+  <h2 class="animate-on-scroll">In The Press</h2>
   <!-- Add press articles or testimonials here -->
 </div>
 </section>
