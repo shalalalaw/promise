@@ -424,6 +424,14 @@ padding: 0;
     }
   }
   
+  .team-section {
+  background-color: #e8aa76;
+  color: #1e2139;
+  text-align: center;
+  font-size: 2rem;
+  }
+
+@media (min-width: 768px) {
 .team-section {
   width: 100%;
   flex-direction: column;
@@ -432,7 +440,8 @@ padding: 0;
   color: #1e2139;
   text-align: left;
   font-size: 2rem;
-  padding-left: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
   padding-bottom: 10%;
 }
 
@@ -578,6 +587,7 @@ margin-left: 15%;
 
 .right-margin {
 margin-right: 15%;
+}
 }
 
 @media (max-width: 767px) {
@@ -750,7 +760,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<section class="team-section smaller-text" id="the-team" style="padding-left:10%;padding-right: 10%;">
+<section class="team-section smaller-text" id="the-team">
 <h2 class="animate-on-scroll">The Team</h2>
   <!-- Alex Shahrestani -->
   <div class="team-member">
@@ -830,7 +840,7 @@ and on…</p>
   </div>
 
   <!-- Kevin Haynes -->
-    <div class="team-member">
+    <div class="team-member bottom-margin">
     <div class="team-row set-reverse shift-right">
 		<div class="col to-end shift-right increase-size">
 		<div class="animate-on-scroll">
