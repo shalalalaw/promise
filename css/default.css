@@ -1,1 +1,414 @@
+@import url(https://themes.googleusercontent.com/fonts/css?kit=BkUmVAgXFNKlSziDya5W8jo015Vpmav-NX1ui0RH4QC_YUwNY4zBbuonj6w2VjBAQrrVHPF2eQg3j-toLU9kKDiede-T3WF_1a45adTTbvt8u45WU12y72TEk3aAZtZE);
 
+:root {
+  --base-margin: 0%;
+}
+
+body + h1, body + h2, body + h3, body + h4, body + h5, body + h6 {
+counter-reset: h1i;
+counter-reset: h2i;
+counter-reset: h3i;
+counter-reset: h4i;
+counter-reset: h5i;
+counter-reset: h6i;
+}
+
+h1 {
+padding-top:0pt;
+color:#000000;
+font-weight:700;
+font-size:18pt;
+padding-bottom:10pt;
+font-family:"Chakra Petch";
+line-height:1.15;
+page-break-after:avoid;
+orphans:2;
+widows:2;
+text-align:left;
+text-decoration:none;
+vertical-align:baseline;
+font-style:normal;
+text-indent: 0;
+counter-increment: h1i;
+}
+
+h1:before {
+content: counter(h1i, upper-roman) ". ";
+margin-right: 1%;
+}
+
+h1 ~ p {
+padding-top:0pt;
+padding-bottom:10pt;
+line-height:1.15;
+orphans:2;
+widows:2;
+text-align:left;
+margin-left: 0;
+}
+
+h2
+{
+padding-top:0pt;
+color:#000000;
+font-weight:700;
+font-size:14pt;
+padding-bottom:10pt;
+font-family:"Chakra Petch";
+line-height:1.15;
+page-break-after:avoid;
+orphans:2;
+widows:2;
+text-align:left;
+text-decoration:none;
+vertical-align:baseline;
+font-style:normal;
+text-indent: 0;
+counter-increment: h2i;
+}
+
+h2:before {
+content: counter(h2i, upper-alpha) ". ";
+margin-right: 1%;
+}
+
+h2 ~ p {
+padding-top:0pt;
+padding-bottom:10pt;
+line-height:1.15;
+orphans:2;
+widows:2;
+text-align:left;
+margin-left: 0;
+}
+
+h3
+{
+padding-top:0pt;
+color:#000000;
+font-weight:700;
+font-size:12pt;
+padding-bottom:10pt;
+font-family:"Chakra Petch";
+line-height:1.15;
+page-break-after:avoid;
+orphans:2;
+widows:2;
+text-align:left
+text-indent: 2%;
+counter-increment: h3i;
+}
+
+h3:before {
+content: counter(h3i, decimal) ". ";
+margin-right: 1%;
+}
+
+h3 ~ p {
+padding-top:0pt;
+padding-bottom:10pt;
+line-height:1.15;
+orphans:2;
+widows:2;
+text-align:left;
+margin-left: 2%;
+}
+
+h3 ~ ol, h3 ~ ul {
+--base-margin: 2%;
+}
+
+h4
+{
+padding-top:0pt;
+color:#000000;
+font-weight:500;
+font-size:12pt;
+padding-bottom:10pt;
+font-family:"Chakra Petch";
+line-height:1.15;
+page-break-after:avoid;
+orphans:2;
+widows:2;
+text-align:left;
+text-indent: 4%;
+counter-increment: h4i;
+}
+
+h4:before {
+content: counter(h4i, lower-alpha) ". ";
+margin-right: 1%;
+}
+
+h4 ~ p {
+padding-top:0pt;
+padding-bottom:10pt;
+line-height:1.15;
+orphans:2;
+widows:2;
+text-align:left;
+margin-left: 4%;
+}
+
+h4 ~ ol, h4 ~ ul {
+--base-margin: 4%;
+}
+
+h5
+{
+padding-top:0pt;
+color:#000000;
+font-weight:500;
+font-size:11pt;
+padding-bottom:10pt;
+font-family:"Chakra Petch";
+line-height:1.15;
+page-break-after:avoid;
+orphans:2;
+widows:2;
+text-align:left;
+text-indent: 6%;
+counter-increment: h5i;
+}
+
+h5:before {
+content: counter(h5i, lower-roman) ". ";
+margin-right: 1%;
+}
+
+h5 ~ p {
+padding-top:0pt;
+padding-bottom:10pt;
+line-height:1.15;
+orphans:2;
+widows:2;
+text-align:left;
+margin-left: 6%;
+}
+
+h5 ~ ol, h5 ~ ul {
+--base-margin: 6%;
+}
+
+h6
+{
+padding-top:0pt;
+color:#000000;
+font-size:11pt;
+padding-bottom:10pt;
+font-family:"Chakra Petch";
+line-height:1.15;
+page-break-after:avoid;
+orphans:2;
+widows:2;
+text-align:left;
+text-indent: 8%;
+counter-increment: h6i;
+}
+
+h6:before {
+content: counter(h6i, upper-roman) ". ";
+margin-right: 1%;
+font-style: italic;
+}
+
+h6 ~ p {
+padding-top:0pt;
+padding-bottom:10pt;
+line-height:1.15;
+orphans:2;
+widows:2;
+text-align:left;
+margin-left: 8%;
+}
+
+h6 ~ ol, h6 ~ ul {
+--base-margin: 8%;
+}
+ 
+ul, ol {
+list-style-type: none;
+color:#000000;
+font-weight:400;
+text-decoration:none;
+vertical-align:baseline;
+font-size:11pt;
+font-family:"Roboto";
+font-style:normal;
+}
+
+ul li {
+list-style-type: disc;
+margin-left: var(--base-margin);
+}
+
+ul + ul li {
+list-style-type: circle;
+margin-left: calc(var(--base-margin) + 2%);
+}
+
+ul + ul + ul li {
+list-style-type: square;
+margin-left: calc(var(--base-margin) + 4%);
+}
+
+ul + ul + ul + ul li {
+list-style-type: disc;
+margin-left: calc(var(--base-margin) + 6%);
+}
+
+ul + ul + ul + ul + ul li {
+list-style-type: circle;
+margin-left: calc(var(--base-margin) + 8%);
+}
+
+ul + ul + ul + ul + ul + ul li {
+list-style-type: square;
+margin-left: calc(var(--base-margin) + 10%);
+}
+
+ol {
+counter-reset: ol1;
+}
+
+ol + ol {
+counter-reset: ol2;
+}
+
+ol + ol + ol {
+counter-reset: ol3;
+}
+
+ol + ol + ol + ol {
+counter-reset: ol4;
+}
+
+ol + ol + ol + ol + ol {
+counter-reset: ol5;
+}
+
+ol + ol + ol + ol + ol + ol {
+counter-reset: ol6;
+}
+
+ol li {
+counter-increment: ol1;
+margin-left: var(--base-margin);
+}
+
+ol li:before {
+content: "(" counter(ol1, upper-roman) ") ";
+margin-right: 1%;
+}
+
+ol + ol li {
+counter-increment: ol2;
+margin-left: calc(var(--base-margin) + 2%);
+}
+
+ol + ol li:before {
+content: "(" counter(ol2, upper-alpha) ") ";
+margin-right: 1%;
+}
+
+ol + ol + ol li {
+counter-increment: ol3;
+margin-left: calc(var(--base-margin) + 4%);
+}
+
+ol + ol + ol li:before {
+content: "(" counter(ol3, decimal) ") ";
+margin-right: 1%;
+}
+
+ol + ol + ol + ol li {
+counter-increment: ol4;
+margin-left: calc(var(--base-margin) + 6%);
+}
+
+ol + ol + ol + ol li:before {
+content: "(" counter(ol4, lower-alpha) ") ";
+margin-right: 1%;
+}
+
+ol + ol + ol + ol + ol li {
+counter-increment: ol5;
+margin-left: calc(var(--base-margin) + 8%);
+} 
+
+ol + ol + ol + ol + ol li:before {
+content: "(" counter(ol5, lower-roman) ") ";
+margin-right: 1%;
+}
+
+ol + ol + ol + ol + ol + ol li {
+counter-increment: ol6;
+margin-left: calc(var(--base-margin) + 10%);
+} 
+
+ol + ol + ol + ol + ol + ol li:before {
+content: "(" counter(ol6, upper-roman) ") ";
+margin-right: 1%;
+font-style: italic;
+}
+
+table td,table th
+{
+padding:0;
+}
+
+.title
+{
+padding-top:0pt;
+color:#000000;
+font-weight:700;
+font-size:26pt;
+padding-bottom:10pt;
+font-family:"Chakra Petch";
+line-height:1.15;
+page-break-after:avoid;
+orphans:2;
+widows:2;
+text-align:center;
+}
+
+.subtitle
+{
+padding-top:0pt;
+color:#666666;
+font-weight:300;
+font-size:20pt;
+padding-bottom:10pt;
+font-family:"Chakra Petch";
+line-height:1.15;
+page-break-after:avoid;
+orphans:2;
+widows:2;
+text-align:left;
+}
+
+li
+{
+color:#000000;
+font-size:11pt;
+font-family:"Roboto";
+}
+
+p
+{
+margin:0;
+color:#000000;
+font-size:11pt;
+font-family:"Roboto";
+}
+
+/*First Child p*/
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+padding-top:0pt;
+text-indent:36pt;
+padding-bottom:10pt;
+line-height:1.15;
+orphans:2;
+widows:2;
+text-align:left;
+}
